@@ -1,0 +1,102 @@
+{
+  "loading": {
+    "loading": "加载中..."
+  },
+    "header": {
+      "notifications": "通知",
+      "store": "商店",
+      "docs": "文档",
+      "settings": "设置",
+      "notifications_tooltip": "通知和错误",
+      "store_tooltip": "前往 Langflow 商店"
+    },
+    "account": {
+      "settings": "设置",
+      "docs": "文档"
+    },
+    "settings": {
+      "title": "设置",
+      "description": "管理Langflow的通用设置。",
+      "general": "常规",
+      "global_variables": "全局变量",
+      "api_keys": "API Keys",
+      "shortcuts": "快捷键",
+      "messages": "消息"
+    },
+    "general": {
+      "title": "常规",
+      "description": "管理Langflow和您的账户的通用设置。",
+      "profile_picture": "头像",
+      "profile_picture_description": "选择作为您头像的图片。",
+      "store_api_key": "商店API密钥",
+      "store_api_key_description": "您没有API密钥。插入您的Langflow API密钥。",
+      "store_api_key_insert": "插入您的Langflow API密钥。"
+    },
+    "global_variables": {
+      "title": "全局变量",
+      "description": "管理全局变量并将其分配给字段。",
+      "add_new": "添加新变量"
+    },
+    "api_keys": {
+      "title": "Langflow API",
+      "add_new": "添加新密钥"
+    },
+    "empty_page": {
+      "title": "开始构建",
+      "description": "从模板开始，或从头开始。",
+      "new_flow": "新建流程"
+    },
+    "templates": {
+      "title": "模板",
+      "get_started": "开始使用",
+      "get_started_description": "从模板开始，或从头开始。",
+      "get_started_blank_flow": "从头开始",
+      "get_started_blank_flow_description": "从一个新的流程开始，从头开始构建。",
+      "get_started_blank_flow_button": "空白流程",
+      "all_templates": "所有模板",
+      "use_cases": "用例",
+      "methodology": "方法论",
+      "assistants": "助手",
+      "classification": "分类",
+      "coding": "编码",
+      "content_generation": "内容生成",
+      "q_a": "问答",
+      "rag": "RAG",
+      "prompting": "提示",
+      "agents": "代理"
+    },
+    "folders": {
+      "title": "文件夹",
+      "add_new": "创建新文件夹",
+      "upload_flow": "上传流程",
+      "download_content": "下载内容",
+      "more_options": "选项"
+    },
+    "components": {
+      "title": "组件",
+      "settings": "组件设置",
+      "search_placeholder": "搜索",
+      "saved": "已保存",
+      "inputs": "输入",
+      "outputs": "输出",
+      "prompts": "提示",
+      "data": "数据",
+      "processing": "处理",
+      "models": "模型",
+      "vector_stores": "向量存储",
+      "embeddings": "嵌入",
+      "agents": "代理",
+      "chains": "链",
+      "documentloaders": "文档加载器",
+      "link_extractors": "链接提取器",
+      "memories": "记忆",
+      "output_parsers": "输出解析器",
+      "prototypes": "原型",
+      "retrievers": "检索器",
+      "text_splitters": "文本分割器",
+      "toolkits": "工具包",
+      "tools": "工具",
+      "logic": "逻辑",
+      "helpers": "助手"
+    }
+  }

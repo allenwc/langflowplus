@@ -15,6 +15,7 @@ import {
   INVALID_API_KEY,
   NO_API_KEY,
 } from "../../../../../../constants/constants";
+import { t } from "i18next";
 
 type StoreApiKeyFormComponentProps = {
   apikey: string;
@@ -42,7 +43,7 @@ const StoreApiKeyFormComponent = ({
       >
         <Card x-chunk="dashboard-04-chunk-2" id="api">
           <CardHeader>
-            <CardTitle>Store API Key</CardTitle>
+            <CardTitle>{t('general.store_api_key')}</CardTitle>
             <CardDescription>
               {(hasApiKey && !validApiKey
                 ? INVALID_API_KEY
@@ -63,7 +64,7 @@ const StoreApiKeyFormComponent = ({
                     value={apikey}
                     isForm
                     password={true}
-                    placeholder="Insert your API Key"
+                    placeholder={t('general.store_api_key_insert')}
                     className="w-full"
                   />
                   <Form.Message match="valueMissing" className="field-invalid">

@@ -42,6 +42,7 @@ import { Button } from "../../../ui/button";
 import { Input } from "../../../ui/input";
 import useFileDrop from "../../hooks/use-on-file-drop";
 import { SidebarFolderSkeleton } from "../sidebarFolderSkeleton";
+import { t } from "i18next";
 
 type SideBarFoldersButtonsComponentProps = {
   handleChangeFolder?: (id: string) => void;
@@ -279,7 +280,7 @@ const SideBarFoldersButtonsComponent = ({
         <IconComponent name="PanelLeftClose" className="h-4 w-4" />
       </SidebarTrigger>
 
-      <div className="flex-1 text-sm font-semibold">Folders</div>
+      <div className="flex-1 text-sm font-semibold">{t("folders.title")}</div>
       <div className="flex items-center gap-1">
         <UploadFolderButton
           onClick={handleUploadFlowsToFolder}
@@ -295,7 +296,7 @@ const SideBarFoldersButtonsComponent = ({
   );
 
   const AddFolderButton = ({ onClick, disabled, loading }) => (
-    <ShadTooltip content="Create new folder" styleClasses="z-50">
+    <ShadTooltip content={t("folders.add_new")} styleClasses="z-50">
       <Button
         variant="ghost"
         size="icon"
@@ -311,7 +312,7 @@ const SideBarFoldersButtonsComponent = ({
   );
 
   const UploadFolderButton = ({ onClick, disabled }) => (
-    <ShadTooltip content="Upload a flow" styleClasses="z-50">
+    <ShadTooltip content={t("folders.upload_flow")} styleClasses="z-50">
       <Button
         variant="ghost"
         size="icon"
@@ -495,7 +496,7 @@ const SideBarFoldersButtonsComponent = ({
                             value=""
                           >
                             <ShadTooltip
-                              content="Options"
+                              content={t("folders.more_options")}
                               side="right"
                               styleClasses="z-50"
                             >
@@ -534,7 +535,7 @@ const SideBarFoldersButtonsComponent = ({
                                 data-testid="btn-download-folder"
                               >
                                 <FolderSelectItem
-                                  name="Download Content"
+                                  name={t("folders.download_content")}
                                   iconName="Download"
                                 />
                               </SelectItem>

@@ -961,3 +961,9 @@ export const ICON_STROKE_WIDTH = 1.25;
 export const DEFAULT_PLACEHOLDER = "Type something...";
 
 export const DEFAULT_TOOLSET_PLACEHOLDER = "Used as a tool";
+
+export const LANGUAGES = [
+  { value: 'en', label: 'English' },
+  { value: 'zh', label: '中文' },
+  // 添加更多语言
+];

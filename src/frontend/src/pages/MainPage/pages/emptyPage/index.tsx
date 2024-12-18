@@ -3,6 +3,7 @@ import ForwardedIconComponent from "@/components/genericIconComponent";
 import { Button } from "@/components/ui/button";
 import { ENABLE_NEW_LOGO } from "@/customization/feature-flags";
 import { useFolderStore } from "@/stores/foldersStore";
+import { t } from "i18next";
 
 type EmptyPageProps = {
   setOpenModal: (open: boolean) => void;
@@ -24,10 +25,10 @@ export const EmptyPage = ({ setOpenModal }: EmptyPageProps) => {
             className="pt-5 font-chivo text-2xl font-semibold text-foreground"
             data-testid="mainpage_title"
           >
-            {folders?.length > 1 ? "Empty folder" : "Start building"}
+            {folders?.length > 1 ? "Empty folder" : t("empty_page.title")}
           </h3>
           <p className="pb-5 text-sm text-secondary-foreground">
-            Begin with a template, or start from scratch.
+            {t("empty_page.description")}
           </p>
           <Button
             variant="default"
@@ -40,7 +41,7 @@ export const EmptyPage = ({ setOpenModal }: EmptyPageProps) => {
               className="h-4 w-4"
             />
             <span className="hidden whitespace-nowrap font-semibold md:inline">
-              New Flow
+              {t("empty_page.new_flow")}
             </span>
           </Button>
         </div>

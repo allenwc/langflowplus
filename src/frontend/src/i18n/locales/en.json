@@ -1,0 +1,102 @@
+{
+  "loading": {
+    "loading": "Loading..."
+  },
+  "header": {
+    "notifications": "Notifications",
+    "store": "Store",
+    "docs": "Documentation",
+    "settings": "Settings",
+    "notifications_tooltip": "Notifications and errors",
+      "store_tooltip": "Go to LangflowStore"
+    },
+    "account": {
+      "settings": "Settings",
+      "docs": "Docs"
+    },
+    "settings": {
+      "title": "Settings",
+      "description": "Manage the general settings for Langflow.",
+      "general": "General",
+      "global_variables": "Global Variables",
+      "api_keys": "API Keys",
+      "shortcuts": "Shortcuts",
+      "messages": "Messages"
+    },
+    "general": {
+      "title": "General",
+      "description": "Manage settings related to Langflow and your account.",
+      "profile_picture": "Profile Picture",
+      "profile_picture_description": "Choose the image that appears as your profile picture.",
+      "store_api_key": "Store API Key",
+      "store_api_key_description": "You don't have an API key.Insert your Langflow API key.",
+      "store_api_key_insert": "Insert your Langflow API key."
+    },
+    "global_variables": {
+      "title": "Global Variables",
+      "description": "Manage global variables and assign them to fields.",
+      "add_new": "Add New"
+    },
+    "api_keys": {
+      "title": "Langflow API",
+      "add_new": "Add New Key"
+    },
+    "empty_page": {
+      "title": "Start building",
+      "description": "Begin with a template, or start from scratch.",
+      "new_flow": "New Flow"
+    },
+    "templates": {
+      "title": "Templates",
+      "get_started": "Get Started",
+      "get_started_description": "Start with templates showcasing Langflow's Prompting, RAG, and Agent use cases.",
+      "get_started_blank_flow": "Start from scratch",
+      "get_started_blank_flow_description": "Begin with a fresh flow to build from scratch.",
+      "get_started_blank_flow_button": "Blank Flow",
+      "all_templates": "All templates",
+      "use_cases": "Use Cases",
+      "methodology": "Methodology",
+      "assistants": "Assistants",
+      "classification": "Classification",
+      "coding": "Coding",
+      "content_generation": "Content Generation",
+      "q_a": "Q&A",
+      "rag": "RAG",
+      "prompting": "Prompting",
+      "agents": "Agents"
+    },
+    "folders": {
+      "title": "Folders",
+      "add_new": "Create new folder",
+      "upload_flow": "Upload a flow",
+      "download_content": "Download content",
+      "more_options": "options"
+    },
+    "components": {
+      "title": "Components",
+      "settings": "Component Settings",
+      "search_placeholder": "Search",
+      "saved": "Saved",
+      "inputs": "Inputs",
+      "outputs": "Outputs",
+      "prompts": "Prompts",
+      "data": "Data",
+      "processing": "Processing",
+      "models": "Models",
+      "vector_stores": "Vector Stores",
+      "embeddings": "Embeddings",
+      "agents": "Agents",
+      "chains": "Chains",
+      "documentloaders": "Document Loaders",
+      "link_extractors": "Link Extractors",
+      "memories": "Memories",
+      "output_parsers": "Output Parsers",
+      "prototypes": "Prototypes",
+      "retrievers": "Retrievers",
+      "text_splitters": "Text Splitters",
+      "toolkits": "Toolkits",
+      "tools": "Tools",
+      "logic": "Logic",
+      "helpers": "Helpers"
+    }
+  }

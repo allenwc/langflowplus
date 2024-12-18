@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import { LoadingComponentProps } from "../../types/components";
 
 export default function LoadingComponent({
@@ -22,7 +23,7 @@ export default function LoadingComponent({
         />
       </svg>
       <br></br>
-      <span className="animate-pulse text-lg text-primary">Loading...</span>
+      <span className="animate-pulse text-lg text-primary">{t("loading.loading")}</span>
     </div>
   );
 }

@@ -8,6 +8,9 @@ import "./style/index.css";
 import "./App.css";
 import "./style/applies.css";
 
+// 导入i18n配置
+import "./i18n/i18n";
+
 // @ts-ignore
 import App from "./App";
 

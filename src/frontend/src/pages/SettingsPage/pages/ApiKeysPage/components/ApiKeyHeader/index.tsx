@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import ForwardedIconComponent from "../../../../../../components/genericIconComponent";
 import { Button } from "../../../../../../components/ui/button";
 import { API_PAGE_PARAGRAPH } from "../../../../../../constants/constants";
@@ -18,7 +19,7 @@ const ApiKeyHeaderComponent = ({
       <div className="flex w-full items-start justify-between gap-6">
         <div className="flex w-full flex-col">
           <h2 className="flex items-center text-lg font-semibold tracking-tight">
-            Langflow API
+            {t('api_keys.title')}
             <ForwardedIconComponent
               name="Key"
               className="ml-2 h-5 w-5 text-primary"
@@ -30,7 +31,7 @@ const ApiKeyHeaderComponent = ({
           <SecretKeyModal data={userId} onCloseModal={fetchApiKeys}>
             <Button data-testid="api-key-button-store" variant="primary">
               <ForwardedIconComponent name="Plus" className="w-4" />
-              Add New
+              {t('api_keys.add_new')}
             </Button>
           </SecretKeyModal>
         </div>

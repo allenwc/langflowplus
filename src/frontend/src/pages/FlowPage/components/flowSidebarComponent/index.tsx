@@ -53,6 +53,7 @@ import { combinedResultsFn } from "./helpers/combined-results";
 import { filteredDataFn } from "./helpers/filtered-data";
 import { normalizeString } from "./helpers/normalize-string";
 import { traditionalSearchMetadata } from "./helpers/traditional-search-metadata";
+import { t } from "i18next";
 
 const CATEGORIES = SIDEBAR_CATEGORIES;
 const BUNDLES = SIDEBAR_BUNDLES;
@@ -298,10 +299,12 @@ export function FlowSidebarComponent() {
             <SidebarTrigger className="text-muted-foreground">
               <ForwardedIconComponent name="PanelLeftClose" />
             </SidebarTrigger>
-            <h3 className="flex-1 text-sm font-semibold">Components</h3>
+            <h3 className="flex-1 text-sm font-semibold">
+              {t("components.title")}
+            </h3>
             <DisclosureTrigger>
               <div>
-                <ShadTooltip content="Component settings" styleClasses="z-50">
+                <ShadTooltip content={t("components.settings")} styleClasses="z-50">
                   <Button
                     variant={showConfig ? "ghostActive" : "ghost"}
                     size="iconMd"
@@ -343,7 +346,7 @@ export function FlowSidebarComponent() {
           />
           {!isInputFocused && search === "" && (
             <div className="pointer-events-none absolute inset-y-0 left-8 top-1/2 flex w-4/5 -translate-y-1/2 items-center justify-between gap-2 text-sm text-muted-foreground">
-              Search{" "}
+              {t("components.search_placeholder")}{" "}
               <span>
                 <ShortcutDisplay sidebar shortcut="/" />
               </span>

@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import ForwardedIconComponent from "@/components/genericIconComponent";
 import { useLogout } from "@/controllers/API/queries/auth";
 import { CustomFeedbackDialog } from "@/customization/components/custom-feedback-dialog";
@@ -22,6 +23,7 @@ import { ProfileIcon } from "../ProfileIcon";
 import ThemeButtons from "../ThemeButtons";
 
 export const AccountMenu = () => {
+  const { t } = useTranslation();
   const [isFeedbackOpen, setIsFeedbackOpen] = useState(false);
   const { customParam: id } = useParams();
   const version = useDarkStore((state) => state.version);
@@ -72,7 +74,7 @@ export const AccountMenu = () => {
                   navigate("/settings");
                 }}
               >
-                Settings
+                {t('account.settings')}
               </HeaderMenuItemButton>
             )}
             {!ENABLE_DATASTAX_LANGFLOW && (
@@ -90,7 +92,7 @@ export const AccountMenu = () => {
               </HeaderMenuItemButton>
             ) : (
               <HeaderMenuItemLink newPage href="https://docs.langflow.org">
-                Docs
+                {t('account.docs')}
               </HeaderMenuItemLink>
             )}
           </HeaderMenuItemsSection>

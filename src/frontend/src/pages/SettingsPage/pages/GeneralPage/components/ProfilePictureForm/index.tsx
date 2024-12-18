@@ -15,6 +15,7 @@ import {
 } from "../../../../../../components/ui/card";
 import { gradients } from "../../../../../../utils/styleUtils";
 import ProfilePictureChooserComponent from "./components/profilePictureChooserComponent";
+import { t } from "i18next";
 
 type ProfilePictureFormComponentProps = {
   profilePicture: string;
@@ -41,9 +42,9 @@ const ProfilePictureFormComponent = ({
     >
       <Card x-chunk="dashboard-04-chunk-1">
         <CardHeader>
-          <CardTitle>Profile Picture</CardTitle>
+          <CardTitle>{t('general.profile_picture')}</CardTitle>
           <CardDescription>
-            Choose the image that appears as your profile picture.
+            {t('general.profile_picture_description')}
           </CardDescription>
         </CardHeader>
         <CardContent>

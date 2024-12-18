@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import AlertDropdown from "@/alerts/alertDropDown";
 import DataStaxLogo from "@/assets/DataStaxLogo.svg?react";
 import LangflowLogo from "@/assets/LangflowLogo.svg?react";
@@ -18,6 +19,7 @@ import { Separator } from "../ui/separator";
 import { AccountMenu } from "./components/AccountMenu";
 import FlowMenu from "./components/FlowMenu";
 import GithubStarComponent from "./components/GithubStarButton";
+import LanguageSwitcher from "./components/LanguageSwitcher";
 
 export default function AppHeader(): JSX.Element {
   const notificationCenter = useAlertStore((state) => state.notificationCenter);
@@ -124,7 +126,7 @@ export default function AppHeader(): JSX.Element {
                 aria-hidden="true"
               />
               <span className="hidden whitespace-nowrap 2xl:inline">
-                Notifications
+                {t('header.notifications')}
               </span>
             </Button>
           </ShadTooltip>
@@ -149,7 +151,7 @@ export default function AppHeader(): JSX.Element {
                   className="side-bar-button-size h-[18px] w-[18px]"
                 />
                 <span className="hidden whitespace-nowrap 2xl:inline">
-                  Store
+                  {t('header.store')}
                 </span>
               </Button>
             </ShadTooltip>
@@ -178,7 +180,7 @@ export default function AppHeader(): JSX.Element {
                   aria-hidden="true"
                 />
                 <span className="hidden whitespace-nowrap 2xl:inline">
-                  Docs
+                  {t('header.docs')}
                 </span>
               </Button>
             </ShadTooltip>
@@ -194,7 +196,7 @@ export default function AppHeader(): JSX.Element {
                   className="side-bar-button-size h-[18px] w-[18px]"
                 />
                 <span className="hidden whitespace-nowrap 2xl:inline">
-                  Settings
+                  {t('header.settings')}
                 </span>
               </Button>
             </ShadTooltip>
@@ -204,6 +206,7 @@ export default function AppHeader(): JSX.Element {
             />
           </>
         )}
+        <LanguageSwitcher />
         <div className="flex">
           <AccountMenu />
         </div>

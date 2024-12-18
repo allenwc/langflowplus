@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import SideBarButtonsComponent from "@/components/sidebarComponent";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { ENABLE_PROFILE_ICONS } from "@/customization/feature-flags";
@@ -22,7 +23,7 @@ export default function SettingsPage(): JSX.Element {
 
   if (showGeneralSettings) {
     sidebarNavItems.push({
-      title: "General",
+      title: t('settings.general'),
       href: "/settings/general",
       icon: (
         <ForwardedIconComponent
@@ -35,7 +36,7 @@ export default function SettingsPage(): JSX.Element {
 
   sidebarNavItems.push(
     {
-      title: "Global Variables",
+      title: t('settings.global_variables'),
       href: "/settings/global-variables",
       icon: (
         <ForwardedIconComponent
@@ -45,7 +46,7 @@ export default function SettingsPage(): JSX.Element {
       ),
     },
     {
-      title: "Langflow API",
+      title: t('settings.api_keys'),
       href: "/settings/api-keys",
       icon: (
         <ForwardedIconComponent
@@ -55,7 +56,7 @@ export default function SettingsPage(): JSX.Element {
       ),
     },
     {
-      title: "Shortcuts",
+      title: t('settings.shortcuts'),
       href: "/settings/shortcuts",
       icon: (
         <ForwardedIconComponent
@@ -65,7 +66,7 @@ export default function SettingsPage(): JSX.Element {
       ),
     },
     {
-      title: "Messages",
+      title: t('settings.messages'),
       href: "/settings/messages",
       icon: (
         <ForwardedIconComponent
@@ -78,8 +79,8 @@ export default function SettingsPage(): JSX.Element {
   return (
     <PageLayout
       backTo={"/"}
-      title="Settings"
-      description="Manage the general settings for Langflow."
+      title={t('settings.title')}
+      description={t('settings.description')}
     >
       <SidebarProvider width="15rem" defaultOpen={false}>
         <SideBarButtonsComponent items={sidebarNavItems} />
