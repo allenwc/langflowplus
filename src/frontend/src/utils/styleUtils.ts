@@ -471,7 +471,7 @@ export const nodeColorsName: { [char: string]: string } = {
   BaseChatMessageHistory: "orange",
 };
 
-export const SIDEBAR_CATEGORIES = [
+export const getSidebarCategories = () => [
   { display_name: t("components.saved"), name: "saved_components", icon: "GradientSave" },
   { display_name: t("components.inputs"), name: "inputs", icon: "Download" },
   { display_name: t("components.outputs"), name: "outputs", icon: "Upload" },

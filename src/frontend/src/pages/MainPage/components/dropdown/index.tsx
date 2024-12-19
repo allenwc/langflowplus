@@ -5,6 +5,7 @@ import { FlowType } from "@/types/flow";
 import { downloadFlow } from "@/utils/reactflowUtils";
 import useDuplicateFlows from "../../oldComponents/componentsComponent/hooks/use-handle-duplicate";
 import useSelectOptionsChange from "../../oldComponents/componentsComponent/hooks/use-select-options-change";
+import { t } from "i18next";
 
 type DropdownComponentProps = {
   flowData: FlowType;
@@ -82,7 +83,7 @@ const DropdownComponent = ({
           aria-hidden="true"
           className="mr-2 h-4 w-4"
         />
-        Download
+        {t('dropdown.download')}
       </DropdownMenuItem>
       <DropdownMenuItem
         onClick={(e) => {
@@ -97,7 +98,7 @@ const DropdownComponent = ({
           aria-hidden="true"
           className="mr-2 h-4 w-4"
         />
-        Duplicate
+        {t('dropdown.duplicate')}
       </DropdownMenuItem>
       <DropdownMenuItem
         onClick={(e) => {
@@ -111,7 +112,7 @@ const DropdownComponent = ({
           aria-hidden="true"
           className="mr-2 h-4 w-4"
         />
-        Delete
+        {t('dropdown.delete')}
       </DropdownMenuItem>
     </>
   );

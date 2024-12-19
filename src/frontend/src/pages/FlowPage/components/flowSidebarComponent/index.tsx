@@ -1,6 +1,7 @@
 import Fuse from "fuse.js";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useHotkeys } from "react-hotkeys-hook"; // Import useHotkeys
+import { useTranslation } from "react-i18next";
 
 import ForwardedIconComponent from "@/components/genericIconComponent";
 import ShadTooltip from "@/components/shadTooltipComponent";
@@ -32,7 +33,7 @@ import { checkChatInput } from "@/utils/reactflowUtils";
 import {
   nodeColors,
   SIDEBAR_BUNDLES,
-  SIDEBAR_CATEGORIES,
+  getSidebarCategories,
 } from "@/utils/styleUtils";
 import { cloneDeep } from "lodash";
 import useAlertStore from "../../../../stores/alertStore";
@@ -55,12 +56,13 @@ import { normalizeString } from "./helpers/normalize-string";
 import { traditionalSearchMetadata } from "./helpers/traditional-search-metadata";
 import { t } from "i18next";
 
-const CATEGORIES = SIDEBAR_CATEGORIES;
 const BUNDLES = SIDEBAR_BUNDLES;
 
 export function FlowSidebarComponent() {
   const [isInputFocused, setIsInputFocused] = useState(false);
   const searchInputRef = useRef<HTMLInputElement | null>(null);
+  const { t } = useTranslation();
+  const CATEGORIES = useMemo(() => getSidebarCategories(), [t]);
 
   const data = useTypesStore((state) => state.data);
   const templates = useTypesStore((state) => state.templates);
@@ -287,6 +289,21 @@ export function FlowSidebarComponent() {
   const nodes = useFlowStore((state) => state.nodes);
   const chatInputAdded = checkChatInput(nodes);
 
+  // 添加语言变化事件监听
+  useEffect(() => {
+    const handleLanguageChange = () => {
+      // 强制重新计算 categories
+      const newCategories = getSidebarCategories();
+      // 强制重新渲染
+      setFilterData(prevData => ({...prevData}));
+    };
+
+    window.addEventListener('languageChanged', handleLanguageChange);
+    return () => {
+      window.removeEventListener('languageChanged', handleLanguageChange);
+    };
+  }, []);
+
   return (
     <Sidebar
       collapsible="offcanvas"
@@ -407,7 +424,7 @@ export function FlowSidebarComponent() {
                                   <DisclosureTrigger className="group/collapsible">
                                     <SidebarMenuButton asChild>
                                       <div
-                                        data-testid={`disclosure-${item.display_name.toLocaleLowerCase()}`}
+                                        data-testid={`disclosure-${item.display_name}`}
                                         tabIndex={0}
                                         onKeyDown={(e) =>
                                           handleKeyDown(e, item.name)
@@ -448,7 +465,7 @@ export function FlowSidebarComponent() {
             )}
             {hasBundleItems && (
               <SidebarGroup className="p-3">
-                <SidebarGroupLabel>Bundles</SidebarGroupLabel>
+                <SidebarGroupLabel>{t('bundles.title')}</SidebarGroupLabel>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {BUNDLES.toSorted(

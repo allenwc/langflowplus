@@ -525,7 +525,7 @@ const SideBarFoldersButtonsComponent = ({
                                   data-testid="btn-rename-folder"
                                 >
                                   <FolderSelectItem
-                                    name="Rename"
+                                    name={t("folders.rename")}
                                     iconName="SquarePen"
                                   />
                                 </SelectItem>
@@ -545,7 +545,7 @@ const SideBarFoldersButtonsComponent = ({
                                   data-testid="btn-delete-folder"
                                 >
                                   <FolderSelectItem
-                                    name="Delete"
+                                    name={t("folders.delete")}
                                     iconName="Trash2"
                                   />
                                 </SelectItem>

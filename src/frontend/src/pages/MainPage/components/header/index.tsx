@@ -3,6 +3,7 @@ import ShadTooltip from "@/components/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import { t } from "i18next";
 import { debounce } from "lodash";
 import { useCallback, useEffect, useState } from "react";
 
@@ -85,8 +86,8 @@ const HeaderComponent = ({
                     : "border-border text-muted-foreground hover:text-foreground"
                 } px-3 pb-2 text-sm`}
               >
-                <div className={flowType === type ? "-mb-px" : ""}>
-                  {type.charAt(0).toUpperCase() + type.slice(1)}
+                <div className={`${flowType === type ? "-mb-px" : ""} whitespace-nowrap`}>
+                  {type === "flows" ? t('main_page.flows') : t('main_page.components')}
                 </div>
               </Button>
             ))}
@@ -98,7 +99,7 @@ const HeaderComponent = ({
                 icon="Search"
                 data-testid="search-store-input"
                 type="text"
-                placeholder={`Search ${flowType}...`}
+                placeholder={`${t('main_page.search')} ${flowType === "flows" ? t('main_page.flows') : t('main_page.components')}...`}
                 className="mr-2"
                 value={debouncedSearch}
                 onChange={handleSearch}
@@ -148,7 +149,7 @@ const HeaderComponent = ({
                     className="h-4 w-4"
                   />
                   <span className="hidden whitespace-nowrap font-semibold md:inline">
-                    New Flow
+                    {t('main_page.new_flow')}
                   </span>
                 </Button>
               </ShadTooltip>

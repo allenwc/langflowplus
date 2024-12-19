@@ -1,3 +1,4 @@
+import { t } from "i18next";
 import { useMemo } from "react";
 
 const useDescriptionModal = (
@@ -8,8 +9,8 @@ const useDescriptionModal = (
     const getTypeLabel = (type) => {
       const labels = {
         all: "item",
-        component: "component",
-        flow: "flow",
+        component: t('main_page.components'),
+        flow: t('main_page.flows'),
       };
       return labels[type] || "";
     };

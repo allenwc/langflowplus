@@ -1,4 +1,26 @@
 {
+  "signup": {
+    "title": "注册Langflow",
+    "username": "用户名",
+    "username_placeholder": "请输入您的用户名",
+    "password": "密码",
+    "password_placeholder": "请输入您的密码",
+    "confirm_password": "确认密码",
+    "confirm_password_placeholder": "请确认您的密码",
+    "sign_up": "注册",
+    "already_have_an_account": "已经有账户？",
+    "sign_in": "登录"
+  },
+  "login": {
+    "title": "登录Langflow",
+    "username": "用户名",
+    "username_placeholder": "请输入您的用户名",
+    "password": "密码",
+    "password_placeholder": "请输入您的密码",
+    "sign_in": "登录",
+    "sign_up": "注册",
+    "dont_have_an_account": "没有账户？"
+  },
   "loading": {
     "loading": "加载中..."
   },
@@ -12,7 +34,9 @@
     },
     "account": {
       "settings": "设置",
-      "docs": "文档"
+      "docs": "文档",
+      "admin": "管理员页面",
+      "logout": "退出登录"
     },
     "settings": {
       "title": "设置",
@@ -46,6 +70,26 @@
       "description": "从模板开始，或从头开始。",
       "new_flow": "新建流程"
     },
+    "empty_folder": {
+      "empty_folder": "空文件夹",
+      "start_building": "开始构建",
+      "description": "从模板开始，或从头开始。",
+      "new_flow": "新建流程"
+    },
+    "delete_confirmation_modal": {
+      "delete": "删除",
+      "note": "注意：此操作是不可逆的。",
+      "cancel": "取消",
+      "are_you_sure_you_want_to_delete_the_selected": "您确定要删除所选",
+      "folder": "文件夹",
+      "component": "组件",
+      "note_delete_folder": "删除所选文件夹将删除所有关联的流程和组件。"
+    },
+    "dropdown": {
+      "download": "下载",
+      "duplicate": "复制",
+      "delete": "删除"
+    },
     "templates": {
       "title": "模板",
       "get_started": "开始使用",
@@ -70,7 +114,9 @@
       "add_new": "创建新文件夹",
       "upload_flow": "上传流程",
       "download_content": "下载内容",
-      "more_options": "选项"
+      "more_options": "选项",
+      "rename": "重命名",
+      "delete": "删除"
     },
     "components": {
       "title": "组件",
@@ -98,5 +144,14 @@
       "tools": "工具",
       "logic": "逻辑",
       "helpers": "助手"
+    },
+    "bundles": {
+      "title": "捆绑包"
+    },
+    "main_page": {
+      "flows": "流程",
+      "components": "组件",
+      "search": "搜索",
+      "new_flow": "新建流程"
     }
   }

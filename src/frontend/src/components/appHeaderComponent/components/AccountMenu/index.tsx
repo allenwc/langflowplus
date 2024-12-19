@@ -81,7 +81,7 @@ export const AccountMenu = () => {
               <>
                 {isAdmin && !autoLogin && (
                   <HeaderMenuItemButton onClick={() => navigate("/admin")}>
-                    Admin Page
+                    {t('account.admin')}
                   </HeaderMenuItemButton>
                 )}
               </>
@@ -96,6 +96,7 @@ export const AccountMenu = () => {
               </HeaderMenuItemLink>
             )}
           </HeaderMenuItemsSection>
+          {/*
           <HeaderMenuItemsSection>
             {ENABLE_DATASTAX_LANGFLOW ? (
               <HeaderMenuItemLink
@@ -122,17 +123,18 @@ export const AccountMenu = () => {
               Join the Langflow Discord
             </HeaderMenuItemLink>
           </HeaderMenuItemsSection>
+          */}
           {ENABLE_DATASTAX_LANGFLOW ? (
             <HeaderMenuItemsSection>
               <HeaderMenuItemLink href="/session/logout" icon="log-out">
-                Logout
+                {t('account.logout')}
               </HeaderMenuItemLink>
             </HeaderMenuItemsSection>
           ) : (
             !autoLogin && (
               <HeaderMenuItemsSection>
                 <HeaderMenuItemButton onClick={handleLogout} icon="log-out">
-                  Logout
+                  {t('account.logout')}
                 </HeaderMenuItemButton>
               </HeaderMenuItemsSection>
             )

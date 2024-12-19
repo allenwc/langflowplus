@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../../components/ui/dialog";
+import { t } from "i18next";
 
 export default function DeleteConfirmationModal({
   children,
@@ -36,7 +37,7 @@ export default function DeleteConfirmationModal({
         <DialogHeader>
           <DialogTitle>
             <div className="flex items-center">
-              <span className="pr-2">Delete</span>
+              <span className="pr-2">{t('delete_confirmation_modal.delete')}</span>
               <Trash2
                 className="h-6 w-6 pl-1 text-foreground"
                 strokeWidth={1.5}
@@ -45,15 +46,15 @@ export default function DeleteConfirmationModal({
           </DialogTitle>
         </DialogHeader>
         <span>
-          Are you sure you want to delete the selected{" "}
-          {description ?? "component"}?<br></br>
+          {t('delete_confirmation_modal.are_you_sure_you_want_to_delete_the_selected')}{" "}
+          {description ?? t('delete_confirmation_modal.component')}?<br></br>
           {note && (
             <>
               {note}
               <br></br>
             </>
           )}
-          Note: This action is irreversible.
+          {t('delete_confirmation_modal.note')}
         </span>
         <DialogFooter>
           <DialogClose asChild>
@@ -62,7 +63,7 @@ export default function DeleteConfirmationModal({
               className="mr-1"
               variant="outline"
             >
-              Cancel
+              {t('delete_confirmation_modal.cancel')}
             </Button>
           </DialogClose>
           <DialogClose asChild>
@@ -73,7 +74,7 @@ export default function DeleteConfirmationModal({
                 onConfirm(e);
               }}
             >
-              Delete
+              {t('delete_confirmation_modal.delete')}
             </Button>
           </DialogClose>
         </DialogFooter>

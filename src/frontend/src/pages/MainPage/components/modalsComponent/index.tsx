@@ -1,6 +1,7 @@
 // Modals.tsx
 import TemplatesModal from "@/modals/templatesModal";
 import DeleteConfirmationModal from "../../../../modals/deleteConfirmationModal";
+import { t } from "i18next";
 
 interface ModalsProps {
   openModal: boolean;
@@ -27,10 +28,8 @@ const ModalsComponent = ({
           handleDeleteFolder();
           setOpenDeleteFolderModal(false);
         }}
-        description="folder"
-        note={
-          "Deleting the selected folder will remove all associated flows and components."
-        }
+        description={t('delete_confirmation_modal.folder')}
+        note={t('delete_confirmation_modal.note_delete_folder')}
       >
         <></>
       </DeleteConfirmationModal>

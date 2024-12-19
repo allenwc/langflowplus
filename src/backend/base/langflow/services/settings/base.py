@@ -136,6 +136,9 @@ class Settings(BaseSettings):
     """User agent for the API calls."""
     backend_only: bool = False
     """If set to True, Langflow will not serve the frontend."""
+    # i18n configuration
+    default_language: str = "en"
+    """The default language for the application."""
 
     # Telemetry
     do_not_track: bool = False
