@@ -23,6 +23,7 @@ import {
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
 import sortByName from "./utils/sort-by-name";
+import { t } from "i18next";
 
 //TODO IMPLEMENT FORM LOGIC
 
@@ -135,12 +136,12 @@ export default function GlobalVariableModal({
     >
       <BaseModal.Header
         description={
-          "This variable will be encrypted and will be available for you to use in any of your projects."
+          t('pages.settings.global_variables.modal_description')
         }
       >
         <span className="pr-2">
           {" "}
-          {initialData ? "Update" : "Create"} Variable{" "}
+          {initialData ? t('pages.settings.global_variables.modal_update') : t('pages.settings.global_variables.modal_save')} Variable{" "}
         </span>
         <ForwardedIconComponent
           name="Globe"
@@ -153,15 +154,15 @@ export default function GlobalVariableModal({
       </BaseModal.Trigger>
       <BaseModal.Content>
         <div className="flex h-full w-full flex-col gap-4 align-middle">
-          <Label>Variable Name</Label>
+          <Label>{t('pages.settings.global_variables.modal_name')}</Label>
           <Input
             value={key}
             onChange={(e) => {
               setKey(e.target.value);
             }}
-            placeholder="Insert a name for the variable..."
+            placeholder={t('pages.settings.global_variables.modal_name_placeholder')}
           ></Input>
-          <Label>Type (optional)</Label>
+          <Label>{t('pages.settings.global_variables.modal_type')}</Label>
 
           <Select
             disabled={disabled}
@@ -184,7 +185,7 @@ export default function GlobalVariableModal({
             </SelectContent>
           </Select>
 
-          <Label>Value</Label>
+          <Label>{t('pages.settings.global_variables.modal_value')}</Label>
           {type === "Credential" ? (
             <InputComponent
               password
@@ -192,7 +193,7 @@ export default function GlobalVariableModal({
               onChange={(e) => {
                 setValue(e);
               }}
-              placeholder="Insert a value for the variable..."
+              placeholder={t('pages.settings.global_variables.modal_value_placeholder')}
               nodeStyle
             />
           ) : (
@@ -206,20 +207,20 @@ export default function GlobalVariableModal({
             />
           )}
 
-          <Label>Apply To Fields (optional)</Label>
+          <Label>{t('pages.settings.global_variables.modal_apply_to_fields')}</Label>
           <InputComponent
             setSelectedOptions={(value) => setFields(value)}
             selectedOptions={fields}
             options={availableFields}
             password={false}
-            placeholder="Choose a field for the variable..."
+            placeholder={t('pages.settings.global_variables.modal_apply_to_fields_placeholder')}
             id={"apply-to-fields"}
           ></InputComponent>
         </div>
       </BaseModal.Content>
       <BaseModal.Footer
         submit={{
-          label: `${initialData ? "Update" : "Save"} Variable`,
+          label: `${initialData ? t('pages.settings.global_variables.modal_update') : t('pages.settings.global_variables.modal_save')}`,
           dataTestId: "save-variable-btn",
         }}
       />

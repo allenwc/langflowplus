@@ -23,7 +23,7 @@ export default function SettingsPage(): JSX.Element {
 
   if (showGeneralSettings) {
     sidebarNavItems.push({
-      title: t('settings.general'),
+      title: t('pages.settings.general.title'),
       href: "/settings/general",
       icon: (
         <ForwardedIconComponent
@@ -36,17 +36,17 @@ export default function SettingsPage(): JSX.Element {
 
   sidebarNavItems.push(
     {
-      title: t('settings.global_variables'),
+      title: t('pages.settings.global_variables.title'),
       href: "/settings/global-variables",
       icon: (
         <ForwardedIconComponent
-          name="Globe"
+          name={t('pages.settings.global_variables.icon')}
           className="w-4 flex-shrink-0 justify-start stroke-[1.5]"
         />
       ),
     },
     {
-      title: t('settings.api_keys'),
+      title: t('pages.settings.api_keys.title'),
       href: "/settings/api-keys",
       icon: (
         <ForwardedIconComponent
@@ -56,7 +56,7 @@ export default function SettingsPage(): JSX.Element {
       ),
     },
     {
-      title: t('settings.shortcuts'),
+      title: t('pages.settings.shortcuts'),
       href: "/settings/shortcuts",
       icon: (
         <ForwardedIconComponent
@@ -66,7 +66,7 @@ export default function SettingsPage(): JSX.Element {
       ),
     },
     {
-      title: t('settings.messages'),
+      title: t('pages.settings.messages.title'),
       href: "/settings/messages",
       icon: (
         <ForwardedIconComponent
@@ -79,8 +79,8 @@ export default function SettingsPage(): JSX.Element {
   return (
     <PageLayout
       backTo={"/"}
-      title={t('settings.title')}
-      description={t('settings.description')}
+      title={t('pages.settings.title')}
+      description={t('pages.settings.description')}
     >
       <SidebarProvider width="15rem" defaultOpen={false}>
         <SideBarButtonsComponent items={sidebarNavItems} />

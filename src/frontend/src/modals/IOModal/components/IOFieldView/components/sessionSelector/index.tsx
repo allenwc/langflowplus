@@ -11,6 +11,7 @@ import {
 import { useUpdateSessionName } from "@/controllers/API/queries/messages/use-rename-session";
 import useFlowStore from "@/stores/flowStore";
 import { cn } from "@/utils/utils";
+import { t } from "i18next";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function SessionSelector({
@@ -179,7 +180,7 @@ export default function SessionSelector({
             >
               <div className="flex items-center">
                 <IconComponent name="Pencil" className="mr-2 h-4 w-4" />
-                Rename
+                {t("io_modal.rename")}
               </div>
             </SelectItem>
             <SelectItem
@@ -189,7 +190,7 @@ export default function SessionSelector({
               <div className="flex w-full items-center justify-between">
                 <div className="flex items-center">
                   <IconComponent name="ScrollText" className="mr-2 h-4 w-4" />
-                  Message logs
+                  {t("io_modal.message_logs")}
                 </div>
                 <IconComponent
                   name="ExternalLink"
@@ -203,7 +204,7 @@ export default function SessionSelector({
             >
               <div className="flex items-center text-status-red hover:text-status-red">
                 <IconComponent name="Trash2" className="mr-2 h-4 w-4" />
-                Delete
+                {t("io_modal.delete")}
               </div>
             </SelectItem>
           </SelectContent>

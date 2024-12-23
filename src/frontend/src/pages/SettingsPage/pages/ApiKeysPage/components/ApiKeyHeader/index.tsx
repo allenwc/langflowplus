@@ -1,7 +1,6 @@
 import { t } from "i18next";
 import ForwardedIconComponent from "../../../../../../components/genericIconComponent";
 import { Button } from "../../../../../../components/ui/button";
-import { API_PAGE_PARAGRAPH } from "../../../../../../constants/constants";
 import SecretKeyModal from "../../../../../../modals/secretKeyModal";
 
 type ApiKeyHeaderComponentProps = {
@@ -25,7 +24,7 @@ const ApiKeyHeaderComponent = ({
               className="ml-2 h-5 w-5 text-primary"
             />
           </h2>
-          <p className="text-sm text-muted-foreground">{API_PAGE_PARAGRAPH}</p>
+          <p className="text-sm text-muted-foreground">{t('pages.settings.api_keys.description')}</p>
         </div>
         <div className="flex flex-shrink-0 items-center gap-2">
           <SecretKeyModal data={userId} onCloseModal={fetchApiKeys}>

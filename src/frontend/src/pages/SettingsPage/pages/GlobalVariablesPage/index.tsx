@@ -46,12 +46,12 @@ export default function GlobalVariablesPage() {
   // Column Definitions: Defines the columns to be displayed.
   const colDefs: ColDef[] = [
     {
-      headerName: "Variable Name",
+      headerName: t('pages.settings.global_variables.grid_name'),
       field: "name",
       flex: 2,
     }, //This column will be twice as wide as the others
     {
-      headerName: "Type",
+      headerName: t('pages.settings.global_variables.grid_type'),
       field: "type",
       cellRenderer: BadgeRenderer,
       cellEditor: DropdownEditor,
@@ -61,10 +61,11 @@ export default function GlobalVariablesPage() {
       flex: 1,
     },
     {
+      headerName: t('pages.settings.global_variables.grid_value'),
       field: "value",
     },
     {
-      headerName: "Apply To Fields",
+      headerName: t('pages.settings.global_variables.grid_apply_to_fields'),
       field: "default_fields",
       valueFormatter: (params) => {
         return params.value?.join(", ") ?? "";
@@ -106,21 +107,21 @@ export default function GlobalVariablesPage() {
       <div className="flex w-full items-start justify-between gap-6">
         <div className="flex w-full flex-col">
           <h2 className="flex items-center text-lg font-semibold tracking-tight">
-            {t('global_variables.title')}
+            {t('pages.settings.global_variables.title')}
             <ForwardedIconComponent
               name="Globe"
               className="ml-2 h-5 w-5 text-primary"
             />
           </h2>
           <p className="text-sm text-muted-foreground">
-            {t('global_variables.description')}
+            {t('pages.settings.global_variables.description')}
           </p>
         </div>
         <div className="flex flex-shrink-0 items-center gap-2">
           <GlobalVariableModal asChild>
             <Button data-testid="api-key-button-store" variant="primary">
               <IconComponent name="Plus" className="w-4" />
-              {t('global_variables.add_new')}
+              {t('pages.settings.global_variables.add_new')}
             </Button>
           </GlobalVariableModal>
         </div>

@@ -26,34 +26,34 @@ export default function TemplatesModal({
   // Define categories and their items
   const categories: Category[] = [
     {
-      title: t("templates.title"),
+      title: t("pages.main.templates.title"),
       items: [
-        { title: t("templates.get_started"), icon: "SquarePlay", id: "get-started" },
-        { title: t("templates.all_templates"), icon: "LayoutPanelTop", id: "all-templates" },
+        { title: t("pages.main.templates.get_started"), icon: "SquarePlay", id: "get-started" },
+        { title: t("pages.main.templates.all_templates"), icon: "LayoutPanelTop", id: "all-templates" },
       ],
     },
     {
       title: t("templates.use_cases"),
       items: [
-        { title: t("templates.assistants"), icon: "BotMessageSquare", id: "assistants" },
-        { title: t("templates.classification"), icon: "Tags", id: "classification" },
-        { title: t("templates.coding"), icon: "TerminalIcon", id: "coding" },
+        { title: t("pages.main.templates.assistants"), icon: "BotMessageSquare", id: "assistants" },
+        { title: t("pages.main.templates.classification"), icon: "Tags", id: "classification" },
+        { title: t("pages.main.templates.coding"), icon: "TerminalIcon", id: "coding" },
         {
-          title: t("templates.content_generation"),
+          title: t("pages.main.templates.content_generation"),
           icon: "Newspaper",
           id: "content-generation",
         },
-        { title: t("templates.q_a"), icon: "Database", id: "q-a" },
+        { title: t("pages.main.templates.q_a"), icon: "Database", id: "q-a" },
         // { title: "Summarization", icon: "Bot", id: "summarization" },
         // { title: "Web Scraping", icon: "CodeXml", id: "web-scraping" },
       ],
     },
     {
-      title: t("templates.methodology"),
+      title: t("pages.main.templates.methodology"),
       items: [
-        { title: t("templates.prompting"), icon: "MessagesSquare", id: "chatbots" },
-        { title: t("templates.rag"), icon: "Database", id: "rag" },
-        { title: t("templates.agents"), icon: "Bot", id: "agents" },
+        { title: t("pages.main.templates.prompting"), icon: "MessagesSquare", id: "chatbots" },
+        { title: t("pages.main.templates.rag"), icon: "Database", id: "rag" },
+        { title: t("pages.main.templates.agents"), icon: "Bot", id: "agents" },
       ],
     },
   ];
@@ -80,9 +80,9 @@ export default function TemplatesModal({
               <BaseModal.Footer>
                 <div className="flex w-full flex-col justify-between gap-4 pb-4 sm:flex-row sm:items-center">
                   <div className="flex flex-col items-start justify-center">
-                    <div className="font-semibold">{t("templates.get_started_blank_flow")}</div>
+                    <div className="font-semibold">{t("pages.main.templates.get_started_blank_flow")}</div>
                     <div className="text-sm text-muted-foreground">
-                      {t("templates.get_started_blank_flow_description")}
+                      {t("pages.main.templates.get_started_blank_flow_description")}
                     </div>
                   </div>
                   <Button
@@ -102,7 +102,7 @@ export default function TemplatesModal({
                       name="Plus"
                       className="h-4 w-4 shrink-0"
                     />
-                    {t("templates.get_started_blank_flow_button")}
+                    {t("pages.main.templates.get_started_blank_flow_button")}
                   </Button>
                 </div>
               </BaseModal.Footer>

@@ -558,15 +558,15 @@ export const DEFAULT_FOLDER = "My Projects";
  * @constant
  *
  */
-export const ADMIN_HEADER_TITLE = "Admin Page";
+// export const ADMIN_HEADER_TITLE = "Admin Page";
 
 /**
  * Header description for admin page
  * @constant
  *
  */
-export const ADMIN_HEADER_DESCRIPTION =
-  "Navigate through this section to efficiently oversee all application users. From here, you can seamlessly manage user accounts.";
+// export const ADMIN_HEADER_DESCRIPTION =
+//   "Navigate through this section to efficiently oversee all application users. From here, you can seamlessly manage user accounts.";
 
 export const BASE_URL_API = custom.BASE_URL_API || "/api/v1/";
 
@@ -628,8 +628,8 @@ export const TIMEOUT_ERROR_DESCRIPION = "Server is busy.";
 
 export const SIGN_UP_SUCCESS = "Account created! Await admin activation. ";
 
-export const API_PAGE_PARAGRAPH =
-  "Your secret API keys are listed below. Do not share your API key with others, or expose it in the browser or other client-side code.";
+// export const API_PAGE_PARAGRAPH =
+//   "Your secret API keys are listed below. Do not share your API key with others, or expose it in the browser or other client-side code.";
 
 export const API_PAGE_USER_KEYS =
   "This user does not have any keys assigned at the moment.";
@@ -712,10 +712,10 @@ export const MY_COLLECTION_DESC =
   "Manage your projects. Download and upload entire collections.";
 export const STORE_DESC = "Explore community-shared flows and components.";
 export const STORE_TITLE = "Langflow Store";
-export const NO_API_KEY = "You don't have an API key.";
-export const INSERT_API_KEY = "Insert your Langflow API key.";
-export const INVALID_API_KEY = "Your API key is not valid. ";
-export const CREATE_API_KEY = `Don’t have an API key? Sign up at`;
+// export const NO_API_KEY = "You don't have an API key.";
+// export const INSERT_API_KEY = "Insert your Langflow API key.";
+// export const INVALID_API_KEY = "Your API key is not valid. ";
+// export const CREATE_API_KEY = `Don’t have an API key? Sign up at`;
 export const STATUS_BUILD = "Build to validate status.";
 export const STATUS_INACTIVE = "Execution blocked";
 export const STATUS_BUILDING = "Building...";

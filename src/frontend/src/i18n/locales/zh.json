@@ -1,157 +1,254 @@
 {
-  "signup": {
-    "title": "注册Langflow",
-    "username": "用户名",
-    "username_placeholder": "请输入您的用户名",
-    "password": "密码",
-    "password_placeholder": "请输入您的密码",
-    "confirm_password": "确认密码",
-    "confirm_password_placeholder": "请确认您的密码",
-    "sign_up": "注册",
-    "already_have_an_account": "已经有账户？",
-    "sign_in": "登录"
+  "pages": {
+    "common": {
+      "cancel": "取消"
+    },
+    "signup": {
+      "title": "注册Langflow",
+      "username": "用户名",
+      "username_placeholder": "请输入您的用户名",
+      "password": "密码",
+      "password_placeholder": "请输入您的密码",
+      "confirm_password": "确认密码",
+      "confirm_password_placeholder": "请确认您的密码",
+      "sign_up": "注册",
+      "already_have_an_account": "已经有账户？",
+      "sign_in": "登录"
+    },
+    "login": {
+      "title": "登录Langflow",
+      "username": "用户名",
+      "username_placeholder": "请输入您的用户名",
+      "password": "密码",
+      "password_placeholder": "请输入您的密码",
+      "sign_in": "登录",
+      "sign_up": "注册",
+      "dont_have_an_account": "没有账户？"
+    },
+    "admin": {
+      "title": "管理员页面",
+      "description": "通过此部分高效地监督所有应用程序用户。在这里，您可以无缝管理用户账户。",
+      "new_user": "新建用户",
+      "search_username": "搜索用户名",
+      "grid_username": "用户名",
+      "grid_active": "激活",
+      "grid_superuser": "超级用户",
+      "grid_created_at": "创建时间",
+      "grid_updated_at": "更新时间",
+      "modal_new_title": "新建用户",
+      "modal_new_title_header": "创建一位新用户",
+      "modal_cancel_text": "取消",
+      "modal_confirmation_text": "保存",
+      "modal_username": "用户名",
+      "modal_username_placeholder": "请输入您的用户名",
+      "modal_password": "密码",
+      "modal_password_placeholder": "请输入您的密码",
+      "modal_confirm_password": "确认密码",
+      "modal_confirm_password_placeholder": "请确认您的密码",
+      "modal_password_mismatch": "密码不匹配",
+      "modal_active": "激活",
+      "modal_superuser": "超级用户",
+      "modal_edit_title": "编辑",
+      "modal_attention": "注意！",
+      "modal_confirmation_content": "您完全确定要对此用户进行更改吗？",
+      "modal_delete_title": "删除",
+      "modal_delete_title_header": "删除用户",
+      "modal_delete_content": "您确定要删除此用户吗？此操作无法撤销。"
+    },
+    "settings": {
+      "title": "设置",
+      "description": "管理Langflow的通用设置。",
+      "shortcuts": "快捷键",
+      "messages": {
+        "title": "消息",
+        "description": "检查、编辑和删除消息，以探索和改进模型行为。"
+      },
+      "general": {
+        "title": "常规",
+        "description": "管理Langflow和您的账户的通用设置。",
+        "profile_picture": "头像",
+        "profile_picture_description": "选择作为您头像的图片。",
+        "store_api_key": "商店API密钥",
+        "store_api_key_description": "您没有API密钥。插入您的Langflow API密钥。",
+        "store_api_key_insert": "插入您的Langflow API密钥。",
+        "create_api_key": "没有API密钥？注册",
+        "invalid_api_key": "您的API密钥无效。",
+        "no_api_key": "您没有API密钥。",
+        "save": "保存",
+        "password": "密码",
+        "password_description": "输入您的密码并确认。",
+        "password_placeholder": "密码",
+        "confirm_password": "确认密码",
+        "confirm_password_placeholder": "确认密码"
+      },
+      "global_variables": {
+        "title": "全局变量",
+        "description": "管理全局变量并将其分配给字段。",
+        "add_new": "添加新变量",
+        "grid_name": "变量名",
+        "grid_type": "类型",
+        "grid_value": "值",
+        "grid_apply_to_fields": "应用到字段",
+        "modal_name": "变量名",
+        "modal_description": "此变量将加密并可供您在任何项目中使用。",
+        "modal_name_placeholder": "请输入您的变量名",
+        "modal_type": "类型",
+        "modal_type_placeholder": "请选择您的变量类型",
+        "modal_value": "值",
+        "modal_value_placeholder": "请输入您的变量值",
+        "modal_apply_to_fields": "应用到字段（可选）",
+        "modal_apply_to_fields_placeholder": "选择一个字段用于变量...",
+        "modal_update": "更新变量",
+        "modal_save": "保存变量"
+      },
+      "api_keys": {
+        "title": "API Keys",
+        "header": "Langflow API",
+        "description": "您的秘密API密钥列表如下。不要与他人分享您的API密钥，或将其暴露在浏览器或任何客户端代码中。"
+      }
+    },
+    "main": {
+      "header": {
+        "flows": "流程",
+        "components": "组件",
+        "search": "搜索",
+        "new_flow": "新建流程"
+      },
+      "empty_page": {
+        "title": "开始构建",
+        "description": "从模板开始，或从头开始。",
+        "new_flow": "新建流程"
+      },
+      "empty_folder": {
+        "empty_folder": "空文件夹",
+        "start_building": "开始构建",
+        "description": "从模板开始，或从头开始。",
+        "new_flow": "新建流程"
+      },
+      "templates": {
+        "title": "模板",
+        "get_started": "开始使用",
+        "get_started_description": "从模板开始，或从头开始。",
+        "get_started_blank_flow": "从头开始",
+        "get_started_blank_flow_description": "从一个新的流程开始，从头开始构建。",
+        "get_started_blank_flow_button": "空白流程",
+        "all_templates": "所有模板",
+        "use_cases": "用例",
+        "methodology": "方法论",
+        "assistants": "助手",
+        "classification": "分类",
+        "coding": "编码",
+        "content_generation": "内容生成",
+        "q_a": "问答",
+        "rag": "RAG",
+        "prompting": "提示",
+        "agents": "代理"
+      },
+      "dropdown": {
+        "download": "下载",
+        "duplicate": "复制",
+        "delete": "删除"
+      },
+      "folders_sidebar": {
+        "title": "文件夹",
+        "add_new": "创建新文件夹",
+        "upload_flow": "上传流程",
+        "download_content": "下载内容",
+        "more_options": "选项",
+        "rename": "重命名",
+        "delete": "删除"
+      }
+    },
+    "flow": {
+      "sidebar": {
+        "components": {
+          "title": "组件",
+          "settings": "组件设置",
+          "search_placeholder": "搜索",
+          "saved": "已保存",
+          "inputs": "输入",
+          "outputs": "输出",
+          "prompts": "提示",
+          "data": "数据",
+          "processing": "处理",
+          "models": "模型",
+          "vector_stores": "向量存储",
+          "embeddings": "嵌入",
+          "agents": "代理",
+          "chains": "链",
+          "documentloaders": "文档加载器",
+          "link_extractors": "链接提取器",
+          "memories": "记忆",
+          "output_parsers": "输出解析器",
+          "prototypes": "原型",
+          "retrievers": "检索器",
+          "text_splitters": "文本分割器",
+          "toolkits": "工具包",
+          "tools": "工具",
+          "logic": "逻辑",
+          "helpers": "助手"
+        },
+        "bundles": {
+          "title": "捆绑包"
+        }
+      },
+      "toolbar": {
+        "playground": "试验场",
+        "share": "分享",
+        "store_api_key_required": "需要商店API密钥"
+      }
+    }
   },
-  "login": {
-    "title": "登录Langflow",
-    "username": "用户名",
-    "username_placeholder": "请输入您的用户名",
-    "password": "密码",
-    "password_placeholder": "请输入您的密码",
-    "sign_in": "登录",
-    "sign_up": "注册",
-    "dont_have_an_account": "没有账户？"
-  },
-  "loading": {
-    "loading": "加载中..."
-  },
+  "components": {
+    "loading": {
+      "text": "加载中..."
+    },
     "header": {
       "notifications": "通知",
       "store": "商店",
       "docs": "文档",
       "settings": "设置",
       "notifications_tooltip": "通知和错误",
-      "store_tooltip": "前往 Langflow 商店"
-    },
-    "account": {
-      "settings": "设置",
-      "docs": "文档",
-      "admin": "管理员页面",
-      "logout": "退出登录"
-    },
-    "settings": {
-      "title": "设置",
-      "description": "管理Langflow的通用设置。",
-      "general": "常规",
-      "global_variables": "全局变量",
-      "api_keys": "API Keys",
-      "shortcuts": "快捷键",
-      "messages": "消息"
-    },
-    "general": {
-      "title": "常规",
-      "description": "管理Langflow和您的账户的通用设置。",
-      "profile_picture": "头像",
-      "profile_picture_description": "选择作为您头像的图片。",
-      "store_api_key": "商店API密钥",
-      "store_api_key_description": "您没有API密钥。插入您的Langflow API密钥。",
-      "store_api_key_insert": "插入您的Langflow API密钥。"
-    },
-    "global_variables": {
-      "title": "全局变量",
-      "description": "管理全局变量并将其分配给字段。",
-      "add_new": "添加新变量"
-    },
-    "api_keys": {
-      "title": "Langflow API",
-      "add_new": "添加新密钥"
-    },
-    "empty_page": {
-      "title": "开始构建",
-      "description": "从模板开始，或从头开始。",
-      "new_flow": "新建流程"
-    },
-    "empty_folder": {
-      "empty_folder": "空文件夹",
-      "start_building": "开始构建",
-      "description": "从模板开始，或从头开始。",
-      "new_flow": "新建流程"
-    },
-    "delete_confirmation_modal": {
-      "delete": "删除",
-      "note": "注意：此操作是不可逆的。",
-      "cancel": "取消",
-      "are_you_sure_you_want_to_delete_the_selected": "您确定要删除所选",
-      "folder": "文件夹",
-      "component": "组件",
-      "note_delete_folder": "删除所选文件夹将删除所有关联的流程和组件。"
-    },
-    "dropdown": {
-      "download": "下载",
-      "duplicate": "复制",
-      "delete": "删除"
-    },
-    "templates": {
-      "title": "模板",
-      "get_started": "开始使用",
-      "get_started_description": "从模板开始，或从头开始。",
-      "get_started_blank_flow": "从头开始",
-      "get_started_blank_flow_description": "从一个新的流程开始，从头开始构建。",
-      "get_started_blank_flow_button": "空白流程",
-      "all_templates": "所有模板",
-      "use_cases": "用例",
-      "methodology": "方法论",
-      "assistants": "助手",
-      "classification": "分类",
-      "coding": "编码",
-      "content_generation": "内容生成",
-      "q_a": "问答",
-      "rag": "RAG",
-      "prompting": "提示",
-      "agents": "代理"
-    },
-    "folders": {
-      "title": "文件夹",
-      "add_new": "创建新文件夹",
-      "upload_flow": "上传流程",
-      "download_content": "下载内容",
-      "more_options": "选项",
-      "rename": "重命名",
-      "delete": "删除"
-    },
-    "components": {
-      "title": "组件",
-      "settings": "组件设置",
-      "search_placeholder": "搜索",
-      "saved": "已保存",
-      "inputs": "输入",
-      "outputs": "输出",
-      "prompts": "提示",
-      "data": "数据",
-      "processing": "处理",
-      "models": "模型",
-      "vector_stores": "向量存储",
-      "embeddings": "嵌入",
-      "agents": "代理",
-      "chains": "链",
-      "documentloaders": "文档加载器",
-      "link_extractors": "链接提取器",
-      "memories": "记忆",
-      "output_parsers": "输出解析器",
-      "prototypes": "原型",
-      "retrievers": "检索器",
-      "text_splitters": "文本分割器",
-      "toolkits": "工具包",
-      "tools": "工具",
-      "logic": "逻辑",
-      "helpers": "助手"
-    },
-    "bundles": {
-      "title": "捆绑包"
-    },
-    "main_page": {
-      "flows": "流程",
-      "components": "组件",
-      "search": "搜索",
-      "new_flow": "新建流程"
+      "store_tooltip": "前往 Langflow 商店",
+      "account_menu": {
+        "settings": "设置",
+        "docs": "文档",
+        "admin": "管理员页面",
+        "logout": "退出登录"
+      },
+      "flow_menu": {
+        "title": "选项",
+        "new": "新建",
+        "flow_settings": "流程设置",
+        "logs": "日志",
+        "import": "导入",
+        "export": "导出",
+        "refresh_all": "刷新所有",
+        "undo": "撤销",
+        "redo": "重做"
+      }
     }
+  },
+  "delete_confirmation_modal": {
+    "delete": "删除",
+    "note": "注意：此操作是不可逆的。",
+    "cancel": "取消",
+    "are_you_sure_you_want_to_delete_the_selected": "您确定要删除所选",
+    "folder": "文件夹",
+    "component": "组件",
+    "note_delete_folder": "删除所选文件夹将删除所有关联的流程和组件。"
+  },
+  "io_modal": {
+    "title": "试验场",
+    "chat": "聊天",
+    "options": "选项",
+    "new_chat": "开启新一轮对话",
+    "new_chat_description": "测试您的流程与聊天提示",
+    "rename": "重命名",
+    "message_logs": "消息日志",
+    "delete": "删除",
+    "send": "发送",
+    "stop": "停止",
+    "send_a_message": "发送消息..."
   }
+}

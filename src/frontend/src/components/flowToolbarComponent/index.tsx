@@ -16,6 +16,7 @@ import { useStoreStore } from "../../stores/storeStore";
 import { classNames, isThereModal } from "../../utils/utils";
 import ForwardedIconComponent from "../genericIconComponent";
 import PlaygroundButton from "./components/playground-button";
+import { t } from "i18next";
 
 export default function FlowToolbar(): JSX.Element {
   const preventDefault = true;
@@ -71,7 +72,7 @@ export default function FlowToolbar(): JSX.Element {
         <ShadTooltip
           content={
             !hasApiKey || !validApiKey || !hasStore
-              ? "Store API Key Required"
+              ? t("pages.flow.toolbar.store_api_key_required")
               : ""
           }
           side="bottom"
@@ -100,7 +101,7 @@ export default function FlowToolbar(): JSX.Element {
                     : "",
                 )}
               />
-              <span className="hidden md:block">Share</span>
+              <span className="hidden md:block whitespace-nowrap">{t("pages.flow.toolbar.share")}</span>
             </>
           </button>
         </ShadTooltip>

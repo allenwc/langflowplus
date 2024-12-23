@@ -17,10 +17,10 @@ export const EmptyFolder = ({ setOpenModal }: EmptyFolderProps) => {
           className="pt-5 font-chivo text-2xl font-semibold"
           data-testid="mainpage_title"
         >
-          {folders?.length > 1 ? t('empty_folder.empty_folder') : t('empty_folder.start_building')}
+          {folders?.length > 1 ? t('pages.main.empty_folder.empty_folder') : t('pages.main.empty_folder.start_building')}
         </h3>
         <p className="pb-5 text-sm text-secondary-foreground">
-          {t('empty_folder.description')}
+          {t('pages.main.empty_folder.description')}
         </p>
         <Button
           variant="default"
@@ -32,7 +32,7 @@ export const EmptyFolder = ({ setOpenModal }: EmptyFolderProps) => {
             aria-hidden="true"
             className="h-4 w-4"
           />
-          <span className="whitespace-nowrap font-semibold">{t('empty_folder.new_flow')}</span>
+          <span className="whitespace-nowrap font-semibold">{t('pages.main.empty_folder.new_flow')}</span>
         </Button>
       </div>
     </div>

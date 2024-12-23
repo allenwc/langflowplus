@@ -21,6 +21,7 @@ import IOFieldView from "./components/IOFieldView";
 import SessionSelector from "./components/IOFieldView/components/sessionSelector/newSessionSelector";
 import SessionView from "./components/SessionView";
 import ChatView from "./components/chatView/newChatView";
+import { t } from "i18next";
 
 export default function IOModal({
   children,
@@ -287,7 +288,7 @@ export default function IOModal({
                     />
                   </Button>
                 </ShadTooltip>
-                {sidebarOpen && <div className="font-semibold">Playground</div>}
+                {sidebarOpen && <div className="font-semibold">{t("io_modal.title")}</div>}
               </div>
               {sidebarOpen && (
                 <div className="flex flex-col pl-3">
@@ -298,9 +299,11 @@ export default function IOModal({
                           name="MessagesSquare"
                           className="h-[18px] w-[18px] text-ring"
                         />
-                        <div className="text-[13px] font-normal">Chat</div>
+                        <div className="text-[13px] font-normal">
+                          {t("io_modal.chat")}
+                        </div>
                       </div>
-                      <ShadTooltip styleClasses="z-50" content="New Chat">
+                      <ShadTooltip styleClasses="z-50" content={t("io_modal.new_chat")}>
                         <div>
                           <Button
                             data-testid="new-chat"

@@ -280,7 +280,7 @@ const SideBarFoldersButtonsComponent = ({
         <IconComponent name="PanelLeftClose" className="h-4 w-4" />
       </SidebarTrigger>
 
-      <div className="flex-1 text-sm font-semibold">{t("folders.title")}</div>
+      <div className="flex-1 text-sm font-semibold">{t("pages.main.folders_sidebar.title")}</div>
       <div className="flex items-center gap-1">
         <UploadFolderButton
           onClick={handleUploadFlowsToFolder}
@@ -296,7 +296,7 @@ const SideBarFoldersButtonsComponent = ({
   );
 
   const AddFolderButton = ({ onClick, disabled, loading }) => (
-    <ShadTooltip content={t("folders.add_new")} styleClasses="z-50">
+    <ShadTooltip content={t("pages.main.folders_sidebar.add_new")} styleClasses="z-50">
       <Button
         variant="ghost"
         size="icon"
@@ -312,7 +312,7 @@ const SideBarFoldersButtonsComponent = ({
   );
 
   const UploadFolderButton = ({ onClick, disabled }) => (
-    <ShadTooltip content={t("folders.upload_flow")} styleClasses="z-50">
+    <ShadTooltip content={t("pages.main.folders_sidebar.upload_flow")} styleClasses="z-50">
       <Button
         variant="ghost"
         size="icon"
@@ -496,7 +496,7 @@ const SideBarFoldersButtonsComponent = ({
                             value=""
                           >
                             <ShadTooltip
-                              content={t("folders.more_options")}
+                              content={t("pages.main.folders_sidebar.more_options")}
                               side="right"
                               styleClasses="z-50"
                             >
@@ -525,7 +525,7 @@ const SideBarFoldersButtonsComponent = ({
                                   data-testid="btn-rename-folder"
                                 >
                                   <FolderSelectItem
-                                    name={t("folders.rename")}
+                                    name={t("pages.main.folders_sidebar.rename")}
                                     iconName="SquarePen"
                                   />
                                 </SelectItem>
@@ -535,7 +535,7 @@ const SideBarFoldersButtonsComponent = ({
                                 data-testid="btn-download-folder"
                               >
                                 <FolderSelectItem
-                                  name={t("folders.download_content")}
+                                  name={t("pages.main.folders_sidebar.download_content")}
                                   iconName="Download"
                                 />
                               </SelectItem>
@@ -545,7 +545,7 @@ const SideBarFoldersButtonsComponent = ({
                                   data-testid="btn-delete-folder"
                                 >
                                   <FolderSelectItem
-                                    name={t("folders.delete")}
+                                    name={t("pages.main.folders_sidebar.delete")}
                                     iconName="Trash2"
                                   />
                                 </SelectItem>

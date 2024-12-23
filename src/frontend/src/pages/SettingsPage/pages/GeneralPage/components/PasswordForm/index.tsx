@@ -9,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../../../../../../components/ui/card";
+import { t } from "i18next";
 
 type PasswordFormComponentProps = {
   password: string;
@@ -36,9 +37,9 @@ const PasswordFormComponent = ({
       >
         <Card x-chunk="dashboard-04-chunk-2">
           <CardHeader>
-            <CardTitle>Password</CardTitle>
+            <CardTitle>{t('pages.settings.general.password')}</CardTitle>
             <CardDescription>
-              Type your new password and confirm it.
+              {t('pages.settings.general.password_description')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -52,7 +53,7 @@ const PasswordFormComponent = ({
                   value={password}
                   isForm
                   password={true}
-                  placeholder="Password"
+                  placeholder={t('pages.settings.general.password_placeholder')}
                   className="w-full"
                 />
                 <Form.Message match="valueMissing" className="field-invalid">
@@ -70,7 +71,7 @@ const PasswordFormComponent = ({
                   value={cnfPassword}
                   isForm
                   password={true}
-                  placeholder="Confirm Password"
+                  placeholder={t('pages.settings.general.confirm_password_placeholder')}
                   className="w-full"
                 />
 
@@ -82,7 +83,7 @@ const PasswordFormComponent = ({
           </CardContent>
           <CardFooter className="border-t px-6 py-4">
             <Form.Submit asChild>
-              <Button type="submit">Save</Button>
+              <Button type="submit">{t('pages.settings.general.save')}</Button>
             </Form.Submit>
           </CardFooter>
         </Card>

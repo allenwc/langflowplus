@@ -74,14 +74,14 @@ export const AccountMenu = () => {
                   navigate("/settings");
                 }}
               >
-                {t('account.settings')}
+                {t('components.header.account_menu.settings')}
               </HeaderMenuItemButton>
             )}
             {!ENABLE_DATASTAX_LANGFLOW && (
               <>
                 {isAdmin && !autoLogin && (
                   <HeaderMenuItemButton onClick={() => navigate("/admin")}>
-                    {t('account.admin')}
+                    {t('components.header.account_menu.admin')}
                   </HeaderMenuItemButton>
                 )}
               </>
@@ -92,7 +92,7 @@ export const AccountMenu = () => {
               </HeaderMenuItemButton>
             ) : (
               <HeaderMenuItemLink newPage href="https://docs.langflow.org">
-                {t('account.docs')}
+                {t('components.header.account_menu.docs')}
               </HeaderMenuItemLink>
             )}
           </HeaderMenuItemsSection>
@@ -127,14 +127,14 @@ export const AccountMenu = () => {
           {ENABLE_DATASTAX_LANGFLOW ? (
             <HeaderMenuItemsSection>
               <HeaderMenuItemLink href="/session/logout" icon="log-out">
-                {t('account.logout')}
+                {t('components.header.account_menu.logout')}
               </HeaderMenuItemLink>
             </HeaderMenuItemsSection>
           ) : (
             !autoLogin && (
               <HeaderMenuItemsSection>
                 <HeaderMenuItemButton onClick={handleLogout} icon="log-out">
-                  {t('account.logout')}
+                  {t('components.header.account_menu.logout')}
                 </HeaderMenuItemButton>
               </HeaderMenuItemsSection>
             )

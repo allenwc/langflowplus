@@ -317,11 +317,11 @@ export function FlowSidebarComponent() {
               <ForwardedIconComponent name="PanelLeftClose" />
             </SidebarTrigger>
             <h3 className="flex-1 text-sm font-semibold">
-              {t("components.title")}
+              {t("pages.flow.sidebar.components.title")}
             </h3>
             <DisclosureTrigger>
               <div>
-                <ShadTooltip content={t("components.settings")} styleClasses="z-50">
+                <ShadTooltip content={t("pages.flow.sidebar.components.settings")} styleClasses="z-50">
                   <Button
                     variant={showConfig ? "ghostActive" : "ghost"}
                     size="iconMd"
@@ -363,7 +363,7 @@ export function FlowSidebarComponent() {
           />
           {!isInputFocused && search === "" && (
             <div className="pointer-events-none absolute inset-y-0 left-8 top-1/2 flex w-4/5 -translate-y-1/2 items-center justify-between gap-2 text-sm text-muted-foreground">
-              {t("components.search_placeholder")}{" "}
+              {t("pages.flow.sidebar.components.search_placeholder")}{" "}
               <span>
                 <ShortcutDisplay sidebar shortcut="/" />
               </span>
@@ -465,7 +465,7 @@ export function FlowSidebarComponent() {
             )}
             {hasBundleItems && (
               <SidebarGroup className="p-3">
-                <SidebarGroupLabel>{t('bundles.title')}</SidebarGroupLabel>
+                <SidebarGroupLabel>{t('pages.flow.sidebar.bundles.title')}</SidebarGroupLabel>
                 <SidebarGroupContent>
                   <SidebarMenu>
                     {BUNDLES.toSorted(

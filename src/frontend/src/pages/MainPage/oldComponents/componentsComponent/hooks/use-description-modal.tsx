@@ -9,8 +9,8 @@ const useDescriptionModal = (
     const getTypeLabel = (type) => {
       const labels = {
         all: "item",
-        component: t('main_page.components'),
-        flow: t('main_page.flows'),
+        component: t('pages.main.header.components'),
+        flow: t('pages.main.header.flows'),
       };
       return labels[type] || "";
     };

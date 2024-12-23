@@ -77,12 +77,12 @@ export default function LoginPage(): JSX.Element {
             <span className="mb-4 text-5xl">⛓️</span>
           )}
           <span className="mb-6 text-2xl font-semibold text-primary">
-            {t('login.title')}
+            {t('pages.login.title')}
           </span>
           <div className="mb-3 w-full">
             <Form.Field name="username">
               <Form.Label className="data-[invalid]:label-invalid">
-                {t('login.username')} <span className="font-medium text-destructive">*</span>
+                {t('pages.login.username')} <span className="font-medium text-destructive">*</span>
               </Form.Label>
 
               <Form.Control asChild>
@@ -94,19 +94,19 @@ export default function LoginPage(): JSX.Element {
                   value={username}
                   className="w-full"
                   required
-                  placeholder={t('login.username_placeholder')}
+                  placeholder={t('pages.login.username_placeholder')}
                 />
               </Form.Control>
 
               <Form.Message match="valueMissing" className="field-invalid">
-                {t('login.username_placeholder')}
+                {t('pages.login.username_placeholder')}
               </Form.Message>
             </Form.Field>
           </div>
           <div className="mb-3 w-full">
             <Form.Field name="password">
               <Form.Label className="data-[invalid]:label-invalid">
-                {t('login.password')} <span className="font-medium text-destructive">*</span>
+                {t('pages.login.password')} <span className="font-medium text-destructive">*</span>
               </Form.Label>
 
               <InputComponent
@@ -117,26 +117,26 @@ export default function LoginPage(): JSX.Element {
                 isForm
                 password={true}
                 required
-                placeholder={t('login.password_placeholder')}
+                placeholder={t('pages.login.password_placeholder')}
                 className="w-full"
               />
 
               <Form.Message className="field-invalid" match="valueMissing">
-                {t('login.password_placeholder')}
+                {t('pages.login.password_placeholder')}
               </Form.Message>
             </Form.Field>
           </div>
           <div className="w-full">
             <Form.Submit asChild>
               <Button className="mr-3 mt-6 w-full" type="submit">
-                {t('login.sign_in')}
+                {t('pages.login.sign_in')}
               </Button>
             </Form.Submit>
           </div>
           <div className="w-full">
             <CustomLink to="/signup">
               <Button className="w-full" variant="outline" type="button">
-                {t('login.dont_have_an_account')}&nbsp;<b>{t('login.sign_up')}</b>
+                {t('pages.login.dont_have_an_account')}&nbsp;<b>{t('pages.login.sign_up')}</b>
               </Button>
             </CustomLink>
           </div>

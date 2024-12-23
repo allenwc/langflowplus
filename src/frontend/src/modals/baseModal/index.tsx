@@ -21,6 +21,7 @@ import { Button } from "../../components/ui/button";
 import { modalHeaderType } from "../../types/components";
 import { cn } from "../../utils/utils";
 import { switchCaseModalSize } from "./helpers/switch-case-size";
+import { t } from "i18next";
 
 type ContentProps = {
   children: ReactNode;
@@ -114,7 +115,7 @@ const Footer: React.FC<{
           <div className="flex items-center gap-3">
             <DialogClose asChild>
               <Button variant="outline" type="button">
-                Cancel
+                {t('pages.common.cancel')}
               </Button>
             </DialogClose>
             <Button

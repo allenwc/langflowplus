@@ -87,7 +87,7 @@ const HeaderComponent = ({
                 } px-3 pb-2 text-sm`}
               >
                 <div className={`${flowType === type ? "-mb-px" : ""} whitespace-nowrap`}>
-                  {type === "flows" ? t('main_page.flows') : t('main_page.components')}
+                  {type === "flows" ? t('pages.main.header.flows') : t('pages.main.header.components')}
                 </div>
               </Button>
             ))}
@@ -99,7 +99,7 @@ const HeaderComponent = ({
                 icon="Search"
                 data-testid="search-store-input"
                 type="text"
-                placeholder={`${t('main_page.search')} ${flowType === "flows" ? t('main_page.flows') : t('main_page.components')}...`}
+                placeholder={`${t('pages.main.header.search')} ${flowType === "flows" ? t('pages.main.header.flows') : t('pages.main.header.components')}...`}
                 className="mr-2"
                 value={debouncedSearch}
                 onChange={handleSearch}
@@ -149,7 +149,7 @@ const HeaderComponent = ({
                     className="h-4 w-4"
                   />
                   <span className="hidden whitespace-nowrap font-semibold md:inline">
-                    {t('main_page.new_flow')}
+                    {t('pages.main.header.new_flow')}
                   </span>
                 </Button>
               </ShadTooltip>

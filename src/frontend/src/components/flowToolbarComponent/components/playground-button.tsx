@@ -1,13 +1,14 @@
 import ForwardedIconComponent from "@/components/genericIconComponent";
 import ShadTooltip from "@/components/shadTooltipComponent";
 import IOModal from "@/modals/IOModal/newModal";
+import { t } from "i18next";
 
 const PlaygroundButton = ({ hasIO, open, setOpen, canvasOpen }) => {
   const PlayIcon = () => (
     <ForwardedIconComponent name="Play" className="h-4 w-4 transition-all" />
   );
 
-  const ButtonLabel = () => <span className="hidden md:block">Playground</span>;
+  const ButtonLabel = () => <span className="hidden md:block">{t("pages.flow.toolbar.playground")}</span>;
 
   const ActiveButton = () => (
     <div

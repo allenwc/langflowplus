@@ -25,10 +25,10 @@ export const EmptyPage = ({ setOpenModal }: EmptyPageProps) => {
             className="pt-5 font-chivo text-2xl font-semibold text-foreground"
             data-testid="mainpage_title"
           >
-            {folders?.length > 1 ? "Empty folder" : t("empty_page.title")}
+            {folders?.length > 1 ? "Empty folder" : t("pages.main.empty_page.title")}
           </h3>
           <p className="pb-5 text-sm text-secondary-foreground">
-            {t("empty_page.description")}
+            {t("pages.main.empty_page.description")}
           </p>
           <Button
             variant="default"
@@ -41,7 +41,7 @@ export const EmptyPage = ({ setOpenModal }: EmptyPageProps) => {
               className="h-4 w-4"
             />
             <span className="hidden whitespace-nowrap font-semibold md:inline">
-              {t("empty_page.new_flow")}
+              {t("pages.main.empty_page.new_flow")}
             </span>
           </Button>
         </div>

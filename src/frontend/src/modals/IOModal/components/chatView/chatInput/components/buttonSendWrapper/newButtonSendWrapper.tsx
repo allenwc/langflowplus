@@ -4,6 +4,7 @@ import { Button } from "../../../../../../../components/ui/button";
 import { Case } from "../../../../../../../shared/components/caseComponent";
 import { FilePreviewType } from "../../../../../../../types/components";
 import { classNames } from "../../../../../../../utils/utils";
+import { t } from "i18next";
 
 const BUTTON_STATES = {
   NO_INPUT: "bg-high-indigo text-background",
@@ -65,7 +66,7 @@ const ButtonSendWrapper = ({
     >
       <Case condition={showStopButton}>
         <div className="flex items-center gap-2 rounded-md text-[14px] font-medium">
-          Stop
+          {t("io_modal.stop")}
           <Loading className="h-[16px] w-[16px]" />
         </div>
       </Case>
@@ -80,7 +81,7 @@ const ButtonSendWrapper = ({
 
       <Case condition={showSendButton}>
         <div className="flex h-fit w-fit items-center gap-2 text-[14px] font-medium">
-          Send
+          {t("io_modal.send")}
         </div>
       </Case>
     </Button>

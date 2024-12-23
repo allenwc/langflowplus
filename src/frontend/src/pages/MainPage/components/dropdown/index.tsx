@@ -83,7 +83,7 @@ const DropdownComponent = ({
           aria-hidden="true"
           className="mr-2 h-4 w-4"
         />
-        {t('dropdown.download')}
+        {t('pages.main.dropdown.download')}
       </DropdownMenuItem>
       <DropdownMenuItem
         onClick={(e) => {
@@ -98,7 +98,7 @@ const DropdownComponent = ({
           aria-hidden="true"
           className="mr-2 h-4 w-4"
         />
-        {t('dropdown.duplicate')}
+        {t('pages.main.dropdown.duplicate')}
       </DropdownMenuItem>
       <DropdownMenuItem
         onClick={(e) => {
@@ -112,7 +112,7 @@ const DropdownComponent = ({
           aria-hidden="true"
           className="mr-2 h-4 w-4"
         />
-        {t('dropdown.delete')}
+        {t('pages.main.dropdown.delete')}
       </DropdownMenuItem>
     </>
   );

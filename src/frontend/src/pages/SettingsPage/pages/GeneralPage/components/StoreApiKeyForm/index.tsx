@@ -9,12 +9,6 @@ import {
   CardHeader,
   CardTitle,
 } from "../../../../../../components/ui/card";
-import {
-  CREATE_API_KEY,
-  INSERT_API_KEY,
-  INVALID_API_KEY,
-  NO_API_KEY,
-} from "../../../../../../constants/constants";
 import { t } from "i18next";
 
 type StoreApiKeyFormComponentProps = {
@@ -43,13 +37,13 @@ const StoreApiKeyFormComponent = ({
       >
         <Card x-chunk="dashboard-04-chunk-2" id="api">
           <CardHeader>
-            <CardTitle>{t('general.store_api_key')}</CardTitle>
+            <CardTitle>{t('pages.settings.general.store_api_key')}</CardTitle>
             <CardDescription>
               {(hasApiKey && !validApiKey
-                ? INVALID_API_KEY
+                ? t('pages.settings.general.invalid_api_key')
                 : !hasApiKey
-                  ? NO_API_KEY
-                  : "") + INSERT_API_KEY}
+                  ? t('pages.settings.general.no_api_key')
+                  : "") + t('pages.settings.general.store_api_key_insert')}
             </CardDescription>
           </CardHeader>
           <CardContent>
@@ -64,16 +58,16 @@ const StoreApiKeyFormComponent = ({
                     value={apikey}
                     isForm
                     password={true}
-                    placeholder={t('general.store_api_key_insert')}
+                    placeholder={t('pages.settings.general.store_api_key_insert')}
                     className="w-full"
                   />
                   <Form.Message match="valueMissing" className="field-invalid">
-                    Please enter your API Key
+                    {t('pages.settings.general.store_api_key_insert')}
                   </Form.Message>
                 </Form.Field>
               </div>
               <span className="pr-1 text-xs text-muted-foreground">
-                {CREATE_API_KEY}{" "}
+                {t('pages.settings.general.create_api_key')}{" "}
                 <a
                   className="text-high-indigo underline"
                   href="https://langflow.store/"
@@ -91,7 +85,7 @@ const StoreApiKeyFormComponent = ({
                 type="submit"
                 data-testid="api-key-save-button-store"
               >
-                Save
+                {t('pages.settings.general.save')}
               </Button>
             </Form.Submit>
           </CardFooter>

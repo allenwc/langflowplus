@@ -42,9 +42,9 @@ const ProfilePictureFormComponent = ({
     >
       <Card x-chunk="dashboard-04-chunk-1">
         <CardHeader>
-          <CardTitle>{t('general.profile_picture')}</CardTitle>
+          <CardTitle>{t('pages.settings.general.profile_picture')}</CardTitle>
           <CardDescription>
-            {t('general.profile_picture_description')}
+            {t('pages.settings.general.profile_picture_description')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -68,7 +68,7 @@ const ProfilePictureFormComponent = ({
         </CardContent>
         <CardFooter className="border-t px-6 py-4">
           <Form.Submit asChild>
-            <Button type="submit">Save</Button>
+            <Button type="submit">{t('pages.settings.general.save')}</Button>
           </Form.Submit>
         </CardFooter>
       </Card>

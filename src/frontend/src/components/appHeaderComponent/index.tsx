@@ -126,7 +126,7 @@ export default function AppHeader(): JSX.Element {
                 aria-hidden="true"
               />
               <span className="hidden whitespace-nowrap 2xl:inline">
-                {t('header.notifications')}
+                {t('components.header.notifications')}
               </span>
             </Button>
           </ShadTooltip>
@@ -151,7 +151,7 @@ export default function AppHeader(): JSX.Element {
                   className="side-bar-button-size h-[18px] w-[18px]"
                 />
                 <span className="hidden whitespace-nowrap 2xl:inline">
-                  {t('header.store')}
+                  {t('components.header.store')}
                 </span>
               </Button>
             </ShadTooltip>
@@ -180,7 +180,7 @@ export default function AppHeader(): JSX.Element {
                   aria-hidden="true"
                 />
                 <span className="hidden whitespace-nowrap 2xl:inline">
-                  {t('header.docs')}
+                  {t('components.header.docs')}
                 </span>
               </Button>
             </ShadTooltip>
@@ -196,7 +196,7 @@ export default function AppHeader(): JSX.Element {
                   className="side-bar-button-size h-[18px] w-[18px]"
                 />
                 <span className="hidden whitespace-nowrap 2xl:inline">
-                  {t('header.settings')}
+                  {t('components.header.settings')}
                 </span>
               </Button>
             </ShadTooltip>

@@ -16,6 +16,7 @@ import { useFileHandler } from "./chatInput/hooks/use-file-handler";
 import ChatInput from "./chatInput/newChatInput";
 import LogoIcon from "./chatMessage/components/chatLogoIcon";
 import ChatMessage from "./chatMessage/newChatMessage";
+import { t } from "i18next";
 
 export default function ChatView({
   sendMessage,
@@ -163,11 +164,11 @@ export default function ChatView({
               )}
               <div className="flex flex-col items-center justify-center">
                 <h3 className="mt-2 pb-2 text-2xl font-semibold text-primary">
-                  New chat
+                  {t("io_modal.new_chat")}
                 </h3>
                 <p className="text-lg text-muted-foreground">
                   <TextEffectPerChar>
-                    Test your flow with a chat prompt
+                    {t("io_modal.new_chat_description")}
                   </TextEffectPerChar>
                 </p>
               </div>

@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Textarea } from "../../../../../../../components/ui/textarea";
 import { classNames } from "../../../../../../../utils/utils";
+import { t } from "i18next";
 
 const TextAreaWrapper = ({
   checkSendingOk,
@@ -25,7 +26,7 @@ const TextAreaWrapper = ({
     } else if (noInput) {
       return CHAT_INPUT_PLACEHOLDER;
     } else {
-      return "Send a message...";
+      return t("io_modal.send_a_message");
     }
   };
 

@@ -101,12 +101,12 @@ export default function SignUp(): JSX.Element {
             <span className="mb-4 text-5xl">⛓️</span>
           )}
           <span className="mb-6 text-2xl font-semibold text-primary">
-            {t('signup.title')}
+            {t('pages.signup.title')}
           </span>
           <div className="mb-3 w-full">
             <Form.Field name="username">
               <Form.Label className="data-[invalid]:label-invalid">
-                {t('signup.username')} <span className="font-medium text-destructive">*</span>
+                {t('pages.signup.username')} <span className="font-medium text-destructive">*</span>
               </Form.Label>
 
               <Form.Control asChild>
@@ -118,19 +118,19 @@ export default function SignUp(): JSX.Element {
                   value={username}
                   className="w-full"
                   required
-                  placeholder={t('signup.username')}
+                  placeholder={t('pages.signup.username')}
                 />
               </Form.Control>
 
               <Form.Message match="valueMissing" className="field-invalid">
-                {t('signup.username_placeholder')}
+                {t('pages.signup.username_placeholder')}
               </Form.Message>
             </Form.Field>
           </div>
           <div className="mb-3 w-full">
             <Form.Field name="password" serverInvalid={password != cnfPassword}>
               <Form.Label className="data-[invalid]:label-invalid">
-                {t('signup.password')} <span className="font-medium text-destructive">*</span>
+                {t('pages.signup.password')} <span className="font-medium text-destructive">*</span>
               </Form.Label>
               <InputComponent
                 onChange={(value) => {
@@ -140,7 +140,7 @@ export default function SignUp(): JSX.Element {
                 isForm
                 password={true}
                 required
-                placeholder={t('signup.password_placeholder')}
+                placeholder={t('pages.signup.password_placeholder')}
                 className="w-full"
               />
 
@@ -161,7 +161,7 @@ export default function SignUp(): JSX.Element {
               serverInvalid={password != cnfPassword}
             >
               <Form.Label className="data-[invalid]:label-invalid">
-                {t('signup.confirm_password')} <span className="font-medium text-destructive">*</span>
+                {t('pages.signup.confirm_password')} <span className="font-medium text-destructive">*</span>
               </Form.Label>
 
               <InputComponent
@@ -172,7 +172,7 @@ export default function SignUp(): JSX.Element {
                 isForm
                 password={true}
                 required
-                placeholder={t('signup.confirm_password_placeholder')}
+                placeholder={t('pages.signup.confirm_password_placeholder')}
                 className="w-full"
               />
 
@@ -191,14 +191,14 @@ export default function SignUp(): JSX.Element {
                   handleSignup();
                 }}
               >
-                {t('signup.sign_up')}
+                {t('pages.signup.sign_up')}
               </Button>
             </Form.Submit>
           </div>
           <div className="w-full">
             <CustomLink to="/login">
               <Button className="w-full" variant="outline">
-                {t('signup.already_have_an_account')}&nbsp;<b>{t('signup.sign_in')}</b>
+                {t('pages.signup.already_have_an_account')}&nbsp;<b>{t('pages.signup.sign_in')}</b>
               </Button>
             </CustomLink>
           </div>
