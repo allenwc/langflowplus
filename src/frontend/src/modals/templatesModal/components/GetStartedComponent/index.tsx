@@ -9,9 +9,10 @@ import vectorRagHorizontal from "../../../../assets/temp-pat-m-2.png";
 import multiAgentHorizontal from "../../../../assets/temp-pat-m-3.png";
 
 import TemplateGetStartedCardComponent from "../TemplateGetStartedCardComponent";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function GetStartedComponent() {
+  const { t } = useTranslation();
   const examples = useFlowsManagerStore((state) => state.examples);
 
   // Define the card data

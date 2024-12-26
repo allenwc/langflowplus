@@ -18,9 +18,10 @@ import ForwardedIconComponent from "../../../../components/genericIconComponent"
 import TableComponent from "../../../../components/tableComponent";
 import { Badge } from "../../../../components/ui/badge";
 import useAlertStore from "../../../../stores/alertStore";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function GlobalVariablesPage() {
+  const { t } = useTranslation();
   const setErrorData = useAlertStore((state) => state.setErrorData);
   const [openModal, setOpenModal] = useState(false);
   const initialData = useRef<GlobalVariable | undefined>(undefined);

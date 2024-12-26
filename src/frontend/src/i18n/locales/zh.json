@@ -104,7 +104,19 @@
       "api_keys": {
         "title": "API Keys",
         "header": "Langflow API",
-        "description": "您的秘密API密钥列表如下。不要与他人分享您的API密钥，或将其暴露在浏览器或任何客户端代码中。"
+        "description": "您的API密钥列表如下。不要与他人分享您的API密钥，或将其暴露在浏览器或任何客户端代码中。",
+        "add_new": "添加新API密钥",
+        "create_api_key": "创建API密钥",
+        "create_api_key_description": "创建一个API密钥以使用Langflow API。",
+        "create_api_key_placeholder": "填写您的API密钥名称",
+        "done": "完成",
+        "create_secret_key": "创建秘密API密钥",
+        "create_secret_key_description": "请将此秘密API密钥保存到安全且可访问的地方。出于安全原因，您将无法通过您的账户再次查看它。如果丢失此秘密API密钥，您需要生成一个新的。",
+        "grid_name": "名称",
+        "grid_key": "密钥",
+        "grid_created": "创建时间",
+        "grid_last_used": "最后使用时间",
+        "grid_total_uses": "总使用次数"
       }
     },
     "main": {
@@ -197,6 +209,15 @@
         "share": "分享",
         "store_api_key_required": "需要商店API密钥"
       }
+    },
+    "store": {
+      "title": "Langflow 商店",
+      "description": "探索社区共享的流程和组件。",
+      "search_placeholder": "搜索流程和组件",
+      "all": "全部",
+      "flows": "流程",
+      "components": "组件",
+      "bundles": "捆绑包"
     }
   },
   "components": {

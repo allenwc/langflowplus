@@ -12,12 +12,13 @@ import BaseModal from "../baseModal";
 import GetStartedComponent from "./components/GetStartedComponent";
 import TemplateContentComponent from "./components/TemplateContentComponent";
 import { Nav } from "./components/navComponent";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function TemplatesModal({
   open,
   setOpen,
 }: newFlowModalPropsType): JSX.Element {
+  const { t } = useTranslation();
   const [currentTab, setCurrentTab] = useState("get-started");
   const addFlow = useAddFlow();
   const navigate = useCustomNavigate();

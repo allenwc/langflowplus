@@ -20,9 +20,10 @@ import {
   inputHandlerEventType,
   signUpInputStateType,
 } from "../../types/components";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function SignUp(): JSX.Element {
+  const { t } = useTranslation();
   const [inputState, setInputState] =
     useState<signUpInputStateType>(CONTROL_INPUT_STATE);
 

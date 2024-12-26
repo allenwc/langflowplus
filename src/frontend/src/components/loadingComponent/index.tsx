@@ -1,9 +1,10 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { LoadingComponentProps } from "../../types/components";
 
 export default function LoadingComponent({
   remSize,
 }: LoadingComponentProps): JSX.Element {
+  const { t } = useTranslation();
   return (
     <div role="status" className="flex flex-col items-center justify-center">
       <svg

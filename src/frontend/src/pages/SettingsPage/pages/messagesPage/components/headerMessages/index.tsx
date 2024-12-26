@@ -1,7 +1,8 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import ForwardedIconComponent from "../../../../../../components/genericIconComponent";
 
 const HeaderMessagesComponent = () => {
+  const { t } = useTranslation();
   return (
     <>
       <div className="flex w-full items-center justify-between gap-4 space-y-0.5">

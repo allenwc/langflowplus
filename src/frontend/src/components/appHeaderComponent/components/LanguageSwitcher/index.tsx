@@ -22,6 +22,8 @@ export default function LanguageSwitcher(): JSX.Element {
   const handleLanguageChange = async (lang: string) => {
     await i18n.changeLanguage(lang);
     setCurrentLang(lang);
+    // 显式存储到 localStorage
+    localStorage.setItem('i18nextLng', lang);
     // 强制重新渲染整个应用
     window.dispatchEvent(new Event('languageChanged'));
   };
@@ -57,9 +59,8 @@ export default function LanguageSwitcher(): JSX.Element {
           {languages.map((lang) => (
             <DropdownMenuItem
               key={lang.value}
-              className={`flex items-center gap-2 cursor-pointer ${
-                currentLang === lang.value ? 'bg-accent' : ''
-              }`}
+              className={`flex items-center gap-2 cursor-pointer ${currentLang === lang.value ? 'bg-accent' : ''
+                }`}
               onClick={() => handleLanguageChange(lang.value)}
             >
               <span>{lang.icon}</span>

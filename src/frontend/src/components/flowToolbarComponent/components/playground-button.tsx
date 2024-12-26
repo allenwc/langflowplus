@@ -1,9 +1,10 @@
 import ForwardedIconComponent from "@/components/genericIconComponent";
 import ShadTooltip from "@/components/shadTooltipComponent";
 import IOModal from "@/modals/IOModal/newModal";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const PlaygroundButton = ({ hasIO, open, setOpen, canvasOpen }) => {
+  const { t } = useTranslation();
   const PlayIcon = () => (
     <ForwardedIconComponent name="Play" className="h-4 w-4 transition-all" />
   );

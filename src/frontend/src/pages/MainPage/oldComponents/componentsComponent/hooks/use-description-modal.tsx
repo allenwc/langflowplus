@@ -1,10 +1,11 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
 
 const useDescriptionModal = (
   selectedFlowsComponentsCards: string[] | undefined,
   type: string | undefined,
 ) => {
+  const { t } = useTranslation();
   const getDescriptionModal = useMemo(() => {
     const getTypeLabel = (type) => {
       const labels = {

@@ -9,10 +9,16 @@ import zhTranslation from './locales/zh.json';
 // 初始化 i18n
 const initializeI18n = async () => {
   try {
-    // 从后端获取默认语言设置
-    const response = await fetch('/api/v1/config');
-    const config = await response.json();
-    const defaultLanguage = config.default_language || 'en';
+    // 先检查本地存储的语言设置
+    const savedLanguage = localStorage.getItem('i18nextLng');
+
+    // 如果本地没有存储的语言设置，则从后端获取默认语言
+    let defaultLanguage = 'en';
+    if (!savedLanguage) {
+      const response = await fetch('/api/v1/config');
+      const config = await response.json();
+      defaultLanguage = config.default_language || 'en';
+    }
 
     await i18n
       .use(LanguageDetector)
@@ -27,7 +33,7 @@ const initializeI18n = async () => {
           },
         },
         fallbackLng: 'en',
-        lng: defaultLanguage, // 使用从后端获取的默认语言
+        lng: savedLanguage || defaultLanguage, // 优先使用本地存储的语言
         detection: {
           order: ['localStorage', 'navigator'],
           caches: ['localStorage'],

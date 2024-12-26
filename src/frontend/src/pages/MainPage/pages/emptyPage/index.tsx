@@ -3,7 +3,7 @@ import ForwardedIconComponent from "@/components/genericIconComponent";
 import { Button } from "@/components/ui/button";
 import { ENABLE_NEW_LOGO } from "@/customization/feature-flags";
 import { useFolderStore } from "@/stores/foldersStore";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 type EmptyPageProps = {
   setOpenModal: (open: boolean) => void;
@@ -11,7 +11,7 @@ type EmptyPageProps = {
 
 export const EmptyPage = ({ setOpenModal }: EmptyPageProps) => {
   const folders = useFolderStore((state) => state.folders);
-
+  const { t } = useTranslation();
   return (
     <div className="m-0 h-full w-full bg-secondary p-0">
       <div className="text-container">

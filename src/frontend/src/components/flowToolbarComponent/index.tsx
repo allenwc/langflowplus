@@ -16,9 +16,10 @@ import { useStoreStore } from "../../stores/storeStore";
 import { classNames, isThereModal } from "../../utils/utils";
 import ForwardedIconComponent from "../genericIconComponent";
 import PlaygroundButton from "./components/playground-button";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function FlowToolbar(): JSX.Element {
+  const { t } = useTranslation();
   const preventDefault = true;
   const [open, setOpen] = useState<boolean>(false);
   const [openCodeModal, setOpenCodeModal] = useState<boolean>(false);
@@ -162,11 +163,10 @@ export default function FlowToolbar(): JSX.Element {
             {ENABLE_LANGFLOW_STORE && (
               <div className="flex items-center gap-2">
                 <div
-                  className={`side-bar-button ${
-                    !hasApiKey || !validApiKey || !hasStore
+                  className={`side-bar-button ${!hasApiKey || !validApiKey || !hasStore
                       ? "cursor-not-allowed"
                       : "cursor-pointer"
-                  }`}
+                    }`}
                 >
                   {ModalMemo}
                 </div>

@@ -21,7 +21,7 @@ import IOFieldView from "./components/IOFieldView";
 import SessionSelector from "./components/IOFieldView/components/sessionSelector/newSessionSelector";
 import SessionView from "./components/SessionView";
 import ChatView from "./components/chatView/newChatView";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function IOModal({
   children,
@@ -31,6 +31,7 @@ export default function IOModal({
   isPlayground,
   canvasOpen,
 }: IOModalPropsType): JSX.Element {
+  const { t } = useTranslation();
   const allNodes = useFlowStore((state) => state.nodes);
   const setIOModalOpen = useFlowsManagerStore((state) => state.setIOModalOpen);
   const inputs = useFlowStore((state) => state.inputs).filter(
@@ -382,31 +383,31 @@ export default function IOModal({
                   {inputs.some(
                     (input) => input.id === selectedViewField.id,
                   ) && (
-                    <IOFieldView
-                      type={InputOutput.INPUT}
-                      left={false}
-                      fieldType={selectedViewField.type!}
-                      fieldId={selectedViewField.id!}
-                    />
-                  )}
+                      <IOFieldView
+                        type={InputOutput.INPUT}
+                        left={false}
+                        fieldType={selectedViewField.type!}
+                        fieldId={selectedViewField.id!}
+                      />
+                    )}
                   {outputs.some(
                     (output) => output.id === selectedViewField.id,
                   ) && (
-                    <IOFieldView
-                      type={InputOutput.OUTPUT}
-                      left={false}
-                      fieldType={selectedViewField.type!}
-                      fieldId={selectedViewField.id!}
-                    />
-                  )}
+                      <IOFieldView
+                        type={InputOutput.OUTPUT}
+                        left={false}
+                        fieldType={selectedViewField.type!}
+                        fieldId={selectedViewField.id!}
+                      />
+                    )}
                   {sessions.some(
                     (session) => session === selectedViewField.id,
                   ) && (
-                    <SessionView
-                      session={selectedViewField.id}
-                      id={currentFlowId}
-                    />
-                  )}
+                      <SessionView
+                        session={selectedViewField.id}
+                        id={currentFlowId}
+                      />
+                    )}
                 </div>
               </div>
             )}
@@ -490,8 +491,8 @@ export default function IOModal({
                       !canvasOpen
                         ? undefined
                         : () => {
-                            setOpen(false);
-                          }
+                          setOpen(false);
+                        }
                     }
                   />
                 </div>

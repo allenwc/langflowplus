@@ -1,4 +1,4 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import SideBarButtonsComponent from "@/components/sidebarComponent";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { ENABLE_PROFILE_ICONS } from "@/customization/feature-flags";
@@ -9,6 +9,7 @@ import ForwardedIconComponent from "../../components/genericIconComponent";
 import PageLayout from "../../components/pageLayout";
 
 export default function SettingsPage(): JSX.Element {
+  const { t } = useTranslation();
   const autoLogin = useAuthStore((state) => state.autoLogin);
   const hasStore = useStoreStore((state) => state.hasStore);
 

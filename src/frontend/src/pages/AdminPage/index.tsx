@@ -40,9 +40,10 @@ import UserManagementModal from "../../modals/userManagementModal";
 import useAlertStore from "../../stores/alertStore";
 import { Users } from "../../types/api";
 import { UserInputType } from "../../types/components";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function AdminPage() {
+  const { t } = useTranslation();
   const [inputValue, setInputValue] = useState("");
 
   const [size, setPageSize] = useState(PAGINATION_SIZE);
@@ -80,7 +81,7 @@ export default function AdminPage() {
           userList.current = users["users"];
           setFilterUserList(users["users"]);
         },
-        onError: () => {},
+        onError: () => { },
       },
     );
   }

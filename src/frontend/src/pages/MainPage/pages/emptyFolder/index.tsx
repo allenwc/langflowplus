@@ -1,7 +1,7 @@
 import ForwardedIconComponent from "@/components/genericIconComponent";
 import { Button } from "@/components/ui/button";
 import { useFolderStore } from "@/stores/foldersStore";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 type EmptyFolderProps = {
   setOpenModal: (open: boolean) => void;
@@ -9,7 +9,7 @@ type EmptyFolderProps = {
 
 export const EmptyFolder = ({ setOpenModal }: EmptyFolderProps) => {
   const folders = useFolderStore((state) => state.folders);
-
+  const { t } = useTranslation();
   return (
     <div className="m-0 flex w-full justify-center">
       <div className="absolute top-1/2 flex w-full -translate-y-1/2 flex-col items-center justify-center gap-2">

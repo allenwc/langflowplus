@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../../../../../../components/ui/card";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 type PasswordFormComponentProps = {
   password: string;
@@ -27,6 +27,7 @@ const PasswordFormComponent = ({
   handleInput,
   handlePatchPassword,
 }: PasswordFormComponentProps) => {
+  const { t } = useTranslation();
   return (
     <>
       <Form.Root

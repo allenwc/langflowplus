@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Textarea } from "../../../../../../../components/ui/textarea";
 import { classNames } from "../../../../../../../utils/utils";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const TextAreaWrapper = ({
   checkSendingOk,
@@ -17,6 +17,7 @@ const TextAreaWrapper = ({
   files,
   isDragging,
 }) => {
+  const { t } = useTranslation();
   const getPlaceholderText = (
     isDragging: boolean,
     noInput: boolean,
@@ -60,11 +61,10 @@ const TextAreaWrapper = ({
         resize: "none",
         bottom: `${inputRef?.current?.scrollHeight}px`,
         maxHeight: "150px",
-        overflow: `${
-          inputRef.current && inputRef.current.scrollHeight > 150
+        overflow: `${inputRef.current && inputRef.current.scrollHeight > 150
             ? "auto"
             : "hidden"
-        }`,
+          }`,
       }}
       value={chatValue}
       onChange={(event): void => {

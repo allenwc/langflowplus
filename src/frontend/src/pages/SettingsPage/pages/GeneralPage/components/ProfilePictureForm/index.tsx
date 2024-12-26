@@ -15,7 +15,7 @@ import {
 } from "../../../../../../components/ui/card";
 import { gradients } from "../../../../../../utils/styleUtils";
 import ProfilePictureChooserComponent from "./components/profilePictureChooserComponent";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 type ProfilePictureFormComponentProps = {
   profilePicture: string;
@@ -31,6 +31,7 @@ const ProfilePictureFormComponent = ({
   handleGetProfilePictures,
   userData,
 }: ProfilePictureFormComponentProps) => {
+  const { t } = useTranslation();
   const { isLoading, data, isFetching } = useGetProfilePicturesQuery();
 
   return (
@@ -56,7 +57,7 @@ const ProfilePictureFormComponent = ({
                 profilePicture == ""
                   ? (userData?.profile_image ??
                     gradients[
-                      parseInt(userData?.id ?? "", 30) % gradients.length
+                    parseInt(userData?.id ?? "", 30) % gradients.length
                     ])
                   : profilePicture
               }

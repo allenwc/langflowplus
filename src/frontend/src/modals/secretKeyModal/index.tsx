@@ -8,6 +8,7 @@ import { createApiKey } from "../../controllers/API";
 import useAlertStore from "../../stores/alertStore";
 import { ApiKeyType } from "../../types/components";
 import BaseModal from "../baseModal";
+import { useTranslation } from "react-i18next";
 
 export default function SecretKeyModal({
   children,
@@ -57,7 +58,7 @@ export default function SecretKeyModal({
       .then((res) => {
         setApiKeyValue(res["api_key"]);
       })
-      .catch((err) => {});
+      .catch((err) => { });
   }
 
   function handleSubmitForm() {
@@ -68,6 +69,8 @@ export default function SecretKeyModal({
       setOpen(false);
     }
   }
+
+  const { t } = useTranslation();
 
   return (
     <BaseModal
@@ -81,19 +84,16 @@ export default function SecretKeyModal({
         description={
           renderKey ? (
             <>
-              {" "}
-              Please save this secret key somewhere safe and accessible. For
-              security reasons,{" "}
-              <strong>you won't be able to view it again</strong> through your
-              account. If you lose this secret key, you'll need to generate a
-              new one.
+              {t('pages.settings.api_keys.create_secret_key_description')}
             </>
           ) : (
-            <>Create a secret API Key to use Langflow API.</>
+            <>
+              {t('pages.settings.api_keys.create_api_key_description')}
+            </>
           )
         }
       >
-        <span className="pr-2">Create API Key</span>
+        <span className="pr-2">{t('pages.settings.api_keys.create_api_key')}</span>
         <IconComponent
           name="Key"
           className="h-6 w-6 pl-1 text-foreground"
@@ -134,7 +134,7 @@ export default function SecretKeyModal({
                   onChange={({ target: { value } }) => {
                     setApiKeyName(value);
                   }}
-                  placeholder="Insert a name for your API Key"
+                  placeholder={t('pages.settings.api_keys.create_api_key_placeholder')}
                 />
               </Form.Control>
             </div>
@@ -142,7 +142,7 @@ export default function SecretKeyModal({
         )}
       </BaseModal.Content>
       <BaseModal.Footer
-        submit={{ label: renderKey ? "Done" : "Create Secret Key" }}
+        submit={{ label: renderKey ? t('pages.settings.api_keys.done') : t('pages.settings.api_keys.create_secret_key') }}
       />
     </BaseModal>
   );

@@ -54,7 +54,6 @@ import { combinedResultsFn } from "./helpers/combined-results";
 import { filteredDataFn } from "./helpers/filtered-data";
 import { normalizeString } from "./helpers/normalize-string";
 import { traditionalSearchMetadata } from "./helpers/traditional-search-metadata";
-import { t } from "i18next";
 
 const BUNDLES = SIDEBAR_BUNDLES;
 
@@ -295,7 +294,7 @@ export function FlowSidebarComponent() {
       // 强制重新计算 categories
       const newCategories = getSidebarCategories();
       // 强制重新渲染
-      setFilterData(prevData => ({...prevData}));
+      setFilterData(prevData => ({ ...prevData }));
     };
 
     window.addEventListener('languageChanged', handleLanguageChange);
@@ -391,74 +390,74 @@ export function FlowSidebarComponent() {
                   <SidebarMenu>
                     {!data
                       ? Array.from({ length: 5 }).map((_, index) => (
-                          <SidebarMenuItem key={index}>
-                            <SidebarMenuSkeleton />
-                          </SidebarMenuItem>
-                        ))
+                        <SidebarMenuItem key={index}>
+                          <SidebarMenuSkeleton />
+                        </SidebarMenuItem>
+                      ))
                       : CATEGORIES.toSorted(
-                          (a, b) =>
-                            (search !== ""
-                              ? sortedCategories
-                              : CATEGORIES
-                            ).findIndex((value) => value === a.name) -
-                            (search !== ""
-                              ? sortedCategories
-                              : CATEGORIES
-                            ).findIndex((value) => value === b.name),
-                        ).map(
-                          (item) =>
-                            dataFilter[item.name] &&
-                            Object.keys(dataFilter[item.name]).length > 0 && (
-                              <Disclosure
-                                key={item.name}
-                                open={openCategories.includes(item.name)}
-                                onOpenChange={(isOpen) => {
-                                  setOpenCategories((prev) =>
-                                    isOpen
-                                      ? [...prev, item.name]
-                                      : prev.filter((cat) => cat !== item.name),
-                                  );
-                                }}
-                              >
-                                <SidebarMenuItem>
-                                  <DisclosureTrigger className="group/collapsible">
-                                    <SidebarMenuButton asChild>
-                                      <div
-                                        data-testid={`disclosure-${item.display_name}`}
-                                        tabIndex={0}
-                                        onKeyDown={(e) =>
-                                          handleKeyDown(e, item.name)
-                                        }
-                                        className="flex cursor-pointer items-center gap-2"
-                                      >
-                                        <ForwardedIconComponent
-                                          name={item.icon}
-                                          className="h-4 w-4 group-aria-expanded/collapsible:text-accent-pink-foreground"
-                                        />
-                                        <span className="flex-1 group-aria-expanded/collapsible:font-semibold">
-                                          {item.display_name}
-                                        </span>
-                                        <ForwardedIconComponent
-                                          name="ChevronRight"
-                                          className="-mr-1 h-4 w-4 text-muted-foreground transition-all group-aria-expanded/collapsible:rotate-90"
-                                        />
-                                      </div>
-                                    </SidebarMenuButton>
-                                  </DisclosureTrigger>
-                                  <DisclosureContent>
-                                    <SidebarItemsList
-                                      item={item}
-                                      dataFilter={dataFilter}
-                                      nodeColors={nodeColors}
-                                      chatInputAdded={chatInputAdded}
-                                      onDragStart={onDragStart}
-                                      sensitiveSort={sensitiveSort}
-                                    />
-                                  </DisclosureContent>
-                                </SidebarMenuItem>
-                              </Disclosure>
-                            ),
-                        )}
+                        (a, b) =>
+                          (search !== ""
+                            ? sortedCategories
+                            : CATEGORIES
+                          ).findIndex((value) => value === a.name) -
+                          (search !== ""
+                            ? sortedCategories
+                            : CATEGORIES
+                          ).findIndex((value) => value === b.name),
+                      ).map(
+                        (item) =>
+                          dataFilter[item.name] &&
+                          Object.keys(dataFilter[item.name]).length > 0 && (
+                            <Disclosure
+                              key={item.name}
+                              open={openCategories.includes(item.name)}
+                              onOpenChange={(isOpen) => {
+                                setOpenCategories((prev) =>
+                                  isOpen
+                                    ? [...prev, item.name]
+                                    : prev.filter((cat) => cat !== item.name),
+                                );
+                              }}
+                            >
+                              <SidebarMenuItem>
+                                <DisclosureTrigger className="group/collapsible">
+                                  <SidebarMenuButton asChild>
+                                    <div
+                                      data-testid={`disclosure-${item.display_name}`}
+                                      tabIndex={0}
+                                      onKeyDown={(e) =>
+                                        handleKeyDown(e, item.name)
+                                      }
+                                      className="flex cursor-pointer items-center gap-2"
+                                    >
+                                      <ForwardedIconComponent
+                                        name={item.icon}
+                                        className="h-4 w-4 group-aria-expanded/collapsible:text-accent-pink-foreground"
+                                      />
+                                      <span className="flex-1 group-aria-expanded/collapsible:font-semibold">
+                                        {item.display_name}
+                                      </span>
+                                      <ForwardedIconComponent
+                                        name="ChevronRight"
+                                        className="-mr-1 h-4 w-4 text-muted-foreground transition-all group-aria-expanded/collapsible:rotate-90"
+                                      />
+                                    </div>
+                                  </SidebarMenuButton>
+                                </DisclosureTrigger>
+                                <DisclosureContent>
+                                  <SidebarItemsList
+                                    item={item}
+                                    dataFilter={dataFilter}
+                                    nodeColors={nodeColors}
+                                    chatInputAdded={chatInputAdded}
+                                    onDragStart={onDragStart}
+                                    sensitiveSort={sensitiveSort}
+                                  />
+                                </DisclosureContent>
+                              </SidebarMenuItem>
+                            </Disclosure>
+                          ),
+                      )}
                   </SidebarMenu>
                 </SidebarGroupContent>
               </SidebarGroup>

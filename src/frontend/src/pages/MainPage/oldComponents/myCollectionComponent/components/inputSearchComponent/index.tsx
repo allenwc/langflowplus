@@ -1,7 +1,7 @@
 import { ChangeEvent, KeyboardEvent } from "react";
 import ForwardedIconComponent from "../../../../../../components/genericIconComponent";
 import { Input } from "../../../../../../components/ui/input";
-
+import { useTranslation } from "react-i18next";
 type InputSearchComponentProps = {
   loading: boolean;
   divClasses?: string;
@@ -19,6 +19,7 @@ const InputSearchComponent = ({
   value,
   onKeyDown,
 }: InputSearchComponentProps) => {
+  const { t } = useTranslation();
   const pagePath = window.location.pathname;
 
   const getSearchPlaceholder = () => {
@@ -27,7 +28,7 @@ const InputSearchComponent = ({
     } else if (pagePath.includes("components")) {
       return "Search Components";
     } else {
-      return "Search Flows and Components";
+      return t("pages.store.search_placeholder");
     }
   };
 

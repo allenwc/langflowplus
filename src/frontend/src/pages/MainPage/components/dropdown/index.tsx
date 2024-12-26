@@ -5,7 +5,7 @@ import { FlowType } from "@/types/flow";
 import { downloadFlow } from "@/utils/reactflowUtils";
 import useDuplicateFlows from "../../oldComponents/componentsComponent/hooks/use-handle-duplicate";
 import useSelectOptionsChange from "../../oldComponents/componentsComponent/hooks/use-select-options-change";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 type DropdownComponentProps = {
   flowData: FlowType;
@@ -18,16 +18,17 @@ const DropdownComponent = ({
   setOpenDelete,
   handlePlaygroundClick,
 }: DropdownComponentProps) => {
+  const { t } = useTranslation();
   const setSuccessData = useAlertStore((state) => state.setSuccessData);
   const setErrorData = useAlertStore((state) => state.setErrorData);
 
   const { handleDuplicate } = useDuplicateFlows(
     [flowData.id],
     [flowData],
-    () => {},
+    () => { },
     setSuccessData,
-    () => {},
-    () => {},
+    () => { },
+    () => { },
     "flow",
   );
 

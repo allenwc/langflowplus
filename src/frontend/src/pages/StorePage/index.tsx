@@ -29,11 +29,9 @@ import {
   NOAPI_ERROR_ALERT,
 } from "../../constants/alerts_constants";
 import {
-  STORE_DESC,
   STORE_PAGINATION_PAGE,
   STORE_PAGINATION_ROWS_COUNT,
   STORE_PAGINATION_SIZE,
-  STORE_TITLE,
 } from "../../constants/constants";
 import { AuthContext } from "../../contexts/authContext";
 import { getStoreComponents } from "../../controllers/API";
@@ -43,8 +41,17 @@ import { useStoreStore } from "../../stores/storeStore";
 import { storeComponent } from "../../types/store";
 import { cn } from "../../utils/utils";
 import InputSearchComponent from "../MainPage/oldComponents/myCollectionComponent/components/inputSearchComponent";
+import { useTranslation } from "react-i18next";
 
 export default function StorePage(): JSX.Element {
+
+  enum TabType {
+    ALL = "All",
+    FLOWS = "Flows",
+    COMPONENTS = "Components"
+  }
+
+  const { t } = useTranslation();
   const hasApiKey = useStoreStore((state) => state.hasApiKey);
   const validApiKey = useStoreStore((state) => state.validApiKey);
   const loadingApiKey = useStoreStore((state) => state.loadingApiKey);
@@ -64,7 +71,7 @@ export default function StorePage(): JSX.Element {
   const [pageSize, setPageSize] = useState(STORE_PAGINATION_SIZE);
   const [pageIndex, setPageIndex] = useState(STORE_PAGINATION_PAGE);
   const [pageOrder, setPageOrder] = useState("Popular");
-  const [tabActive, setTabActive] = useState("All");
+  const [tabActive, setTabActive] = useState(TabType.ALL);
   const [searchNow, setSearchNow] = useState("");
   const [selectFilter, setSelectFilter] = useState("all");
 
@@ -114,7 +121,7 @@ export default function StorePage(): JSX.Element {
       page: pageIndex,
       limit: pageSize,
       is_component:
-        tabActive === "All" ? null : tabActive === "Flows" ? false : true,
+        tabActive === TabType.ALL ? null : tabActive === TabType.FLOWS ? false : true,
       sort: pageOrder === "Popular" ? "-count(downloads)" : "name",
       tags: filteredCategories,
       liked: selectFilter === "likedbyme" && validApiKey ? true : null,
@@ -162,8 +169,8 @@ export default function StorePage(): JSX.Element {
   return (
     <PageLayout
       betaIcon
-      title={STORE_TITLE}
-      description={STORE_DESC}
+      title={t("pages.store.title")}
+      description={t("pages.store.description")}
       button={
         <Button
           data-testid="api-key-button-store"
@@ -204,52 +211,52 @@ export default function StorePage(): JSX.Element {
                 data-testid="all-button-store"
                 disabled={loading}
                 onClick={() => {
-                  setTabActive("All");
+                  setTabActive(TabType.ALL);
                 }}
                 className={
-                  (tabActive === "All"
+                  (tabActive === TabType.ALL
                     ? "border-b-2 border-primary p-3"
                     : "border-b-2 border-transparent p-3 text-muted-foreground hover:text-primary") +
                   (loading ? " cursor-not-allowed" : "")
                 }
               >
-                All
+                {t("pages.store.all")}
               </button>
               <button
                 data-testid="flows-button-store"
                 disabled={loading}
                 onClick={() => {
                   resetPagination();
-                  setTabActive("Flows");
+                  setTabActive(TabType.FLOWS);
                 }}
                 className={
-                  (tabActive === "Flows"
+                  (tabActive === TabType.FLOWS
                     ? "border-b-2 border-primary p-3"
                     : "border-b-2 border-transparent p-3 text-muted-foreground hover:text-primary") +
                   (loading ? " cursor-not-allowed" : "")
                 }
               >
-                Flows
+                {t("pages.store.flows")}
               </button>
               <button
                 data-testid="components-button-store"
                 disabled={loading}
                 onClick={() => {
                   resetPagination();
-                  setTabActive("Components");
+                  setTabActive(TabType.COMPONENTS);
                 }}
                 className={
-                  (tabActive === "Components"
+                  (tabActive === TabType.COMPONENTS
                     ? "border-b-2 border-primary p-3"
                     : "border-b-2 border-transparent p-3 text-muted-foreground hover:text-primary") +
                   (loading ? " cursor-not-allowed" : "")
                 }
               >
-                Components
+                {t("pages.store.components")}
               </button>
               <ShadTooltip content="Coming Soon">
                 <button className="cursor-not-allowed p-3 text-muted-foreground">
-                  Bundles
+                  {t("pages.store.bundles")}
                 </button>
               </ShadTooltip>
             </div>

@@ -21,7 +21,7 @@ import { Button } from "../../components/ui/button";
 import { modalHeaderType } from "../../types/components";
 import { cn } from "../../utils/utils";
 import { switchCaseModalSize } from "./helpers/switch-case-size";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 type ContentProps = {
   children: ReactNode;
@@ -101,6 +101,8 @@ const Footer: React.FC<{
   close?: boolean;
   centered?: boolean;
 }> = ({ children, submit, close, centered }) => {
+  const { t } = useTranslation();
+
   return (
     <div
       className={
@@ -143,33 +145,33 @@ const Footer: React.FC<{
 };
 interface BaseModalProps {
   children:
-    | [
-        React.ReactElement<ContentProps>,
-        React.ReactElement<HeaderProps>?,
-        React.ReactElement<TriggerProps>?,
-        React.ReactElement<FooterProps>?,
-      ]
-    | React.ReactElement<ContentProps>;
+  | [
+    React.ReactElement<ContentProps>,
+    React.ReactElement<HeaderProps>?,
+    React.ReactElement<TriggerProps>?,
+    React.ReactElement<FooterProps>?,
+  ]
+  | React.ReactElement<ContentProps>;
   open?: boolean;
   setOpen?: (open: boolean) => void;
   size?:
-    | "x-small"
-    | "smaller"
-    | "small"
-    | "medium"
-    | "medium-tall"
-    | "large"
-    | "three-cards"
-    | "large-thin"
-    | "large-h-full"
-    | "templates"
-    | "small-h-full"
-    | "medium-h-full"
-    | "md-thin"
-    | "sm-thin"
-    | "smaller-h-full"
-    | "medium-log"
-    | "x-large";
+  | "x-small"
+  | "smaller"
+  | "small"
+  | "medium"
+  | "medium-tall"
+  | "large"
+  | "three-cards"
+  | "large-thin"
+  | "large-h-full"
+  | "templates"
+  | "small-h-full"
+  | "medium-h-full"
+  | "md-thin"
+  | "sm-thin"
+  | "smaller-h-full"
+  | "medium-log"
+  | "x-large";
   className?: string;
   disable?: boolean;
   onChangeOpenModal?: (open?: boolean) => void;

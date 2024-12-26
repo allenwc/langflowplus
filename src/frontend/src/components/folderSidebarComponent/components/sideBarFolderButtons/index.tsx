@@ -42,7 +42,7 @@ import { Button } from "../../../ui/button";
 import { Input } from "../../../ui/input";
 import useFileDrop from "../../hooks/use-on-file-drop";
 import { SidebarFolderSkeleton } from "../sidebarFolderSkeleton";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 type SideBarFoldersButtonsComponentProps = {
   handleChangeFolder?: (id: string) => void;
@@ -52,6 +52,7 @@ const SideBarFoldersButtonsComponent = ({
   handleChangeFolder,
   handleDeleteFolder,
 }: SideBarFoldersButtonsComponentProps) => {
+  const { t } = useTranslation();
   const location = useLocation();
   const pathname = location.pathname;
   const folders = useFolderStore((state) => state.folders);
@@ -507,9 +508,8 @@ const SideBarFoldersButtonsComponent = ({
                               >
                                 <IconComponent
                                   name={"MoreHorizontal"}
-                                  className={`w-4 stroke-[1.5] px-0 text-muted-foreground group-hover/menu-button:block group-hover/menu-button:text-foreground ${
-                                    checkPathName(item.id!) ? "block" : "hidden"
-                                  }`}
+                                  className={`w-4 stroke-[1.5] px-0 text-muted-foreground group-hover/menu-button:block group-hover/menu-button:text-foreground ${checkPathName(item.id!) ? "block" : "hidden"
+                                    }`}
                                 />
                               </SelectTrigger>
                             </ShadTooltip>

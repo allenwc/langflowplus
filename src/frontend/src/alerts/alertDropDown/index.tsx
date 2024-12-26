@@ -10,13 +10,14 @@ import { ZERO_NOTIFICATIONS } from "../../constants/constants";
 import useAlertStore from "../../stores/alertStore";
 import { AlertDropdownType } from "../../types/alerts";
 import SingleAlert from "./components/singleAlertComponent";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function AlertDropdown({
   children,
   notificationRef,
   onClose,
 }: AlertDropdownType): JSX.Element {
+  const { t } = useTranslation();
   const notificationList = useAlertStore((state) => state.notificationList);
   const clearNotificationList = useAlertStore(
     (state) => state.clearNotificationList,

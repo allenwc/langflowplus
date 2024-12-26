@@ -1,4 +1,4 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import AlertDropdown from "@/alerts/alertDropDown";
 import DataStaxLogo from "@/assets/DataStaxLogo.svg?react";
 import LangflowLogo from "@/assets/LangflowLogo.svg?react";
@@ -22,6 +22,7 @@ import GithubStarComponent from "./components/GithubStarButton";
 import LanguageSwitcher from "./components/LanguageSwitcher";
 
 export default function AppHeader(): JSX.Element {
+  const { t } = useTranslation();
   const notificationCenter = useAlertStore((state) => state.notificationCenter);
   const navigate = useCustomNavigate();
   const [activeState, setActiveState] = useState<"notifications" | null>(null);

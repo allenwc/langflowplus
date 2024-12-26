@@ -23,7 +23,7 @@ import {
 } from "../ui/select";
 import { Textarea } from "../ui/textarea";
 import sortByName from "./utils/sort-by-name";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 //TODO IMPLEMENT FORM LOGIC
 
@@ -42,6 +42,7 @@ export default function GlobalVariableModal({
   setOpen?: (a: boolean | ((o?: boolean) => boolean)) => void;
   disabled?: boolean;
 }): JSX.Element {
+  const { t } = useTranslation();
   const [key, setKey] = useState(initialData?.name ?? "");
   const [value, setValue] = useState(initialData?.value ?? "");
   const [type, setType] = useState(initialData?.type ?? "Generic");
@@ -105,7 +106,7 @@ export default function GlobalVariableModal({
           title: `Error ${initialData ? "updating" : "creating"} variable`,
           list: [
             responseError?.response?.data?.detail ??
-              `An unexpected error occurred while ${initialData ? "updating a new" : "creating"} variable. Please try again.`,
+            `An unexpected error occurred while ${initialData ? "updating a new" : "creating"} variable. Please try again.`,
           ],
         });
       },

@@ -12,7 +12,7 @@ import {
 } from "../../types/components";
 import { nodeIconsLucide } from "../../utils/styleUtils";
 import BaseModal from "../baseModal";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function UserManagementModal({
   title,
@@ -26,6 +26,7 @@ export default function UserManagementModal({
   onConfirm,
   asChild,
 }: UserManagementType) {
+  const { t } = useTranslation();
   const Icon: any = nodeIconsLucide[icon];
   const [pwdVisible, setPwdVisible] = useState(false);
   const [confirmPwdVisible, setConfirmPwdVisible] = useState(false);

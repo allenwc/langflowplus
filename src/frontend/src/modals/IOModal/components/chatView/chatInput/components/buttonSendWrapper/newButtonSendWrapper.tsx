@@ -4,7 +4,7 @@ import { Button } from "../../../../../../../components/ui/button";
 import { Case } from "../../../../../../../shared/components/caseComponent";
 import { FilePreviewType } from "../../../../../../../types/components";
 import { classNames } from "../../../../../../../utils/utils";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const BUTTON_STATES = {
   NO_INPUT: "bg-high-indigo text-background",
@@ -30,6 +30,7 @@ const ButtonSendWrapper = ({
   chatValue,
   files,
 }: ButtonSendWrapperProps) => {
+  const { t } = useTranslation();
   const stopBuilding = useFlowStore((state) => state.stopBuilding);
 
   const isBuilding = useFlowStore((state) => state.isBuilding);

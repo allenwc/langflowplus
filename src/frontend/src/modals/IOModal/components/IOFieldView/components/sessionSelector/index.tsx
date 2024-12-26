@@ -11,7 +11,7 @@ import {
 import { useUpdateSessionName } from "@/controllers/API/queries/messages/use-rename-session";
 import useFlowStore from "@/stores/flowStore";
 import { cn } from "@/utils/utils";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import React, { useEffect, useRef, useState } from "react";
 
 export default function SessionSelector({
@@ -33,6 +33,7 @@ export default function SessionSelector({
   selectedView?: { type: string; id: string };
   setSelectedView: (view: { type: string; id: string } | undefined) => void;
 }) {
+  const { t } = useTranslation();
   const currentFlowId = useFlowStore((state) => state.currentFlow?.id);
   const [isEditing, setIsEditing] = useState(false);
   const [editedSession, setEditedSession] = useState(session);

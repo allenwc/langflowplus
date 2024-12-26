@@ -16,7 +16,7 @@ import { useFileHandler } from "./chatInput/hooks/use-file-handler";
 import ChatInput from "./chatInput/newChatInput";
 import LogoIcon from "./chatMessage/components/chatLogoIcon";
 import ChatMessage from "./chatMessage/newChatMessage";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function ChatView({
   sendMessage,
@@ -28,6 +28,7 @@ export default function ChatView({
   focusChat,
   closeChat,
 }: chatViewProps): JSX.Element {
+  const { t } = useTranslation();
   const { flowPool, inputs, CleanFlowPool } = useFlowStore();
   const currentFlowId = useFlowsManagerStore((state) => state.currentFlowId);
   const messagesRef = useRef<HTMLDivElement | null>(null);

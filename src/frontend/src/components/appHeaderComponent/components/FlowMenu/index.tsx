@@ -30,9 +30,10 @@ import useFlowStore from "@/stores/flowStore";
 import { useShortcutsStore } from "@/stores/shortcuts";
 import { cn } from "@/utils/utils";
 import { useQueryClient } from "@tanstack/react-query";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
-export const MenuBar = ({}: {}): JSX.Element => {
+export const MenuBar = ({ }: {}): JSX.Element => {
+  const { t } = useTranslation();
   const shortcuts = useShortcutsStore((state) => state.shortcuts);
   const addFlow = useAddFlow();
   const setErrorData = useAlertStore((state) => state.setErrorData);
@@ -296,9 +297,9 @@ export const MenuBar = ({}: {}): JSX.Element => {
               SAVED_HOVER +
               (updatedAt
                 ? new Date(updatedAt).toLocaleString("en-US", {
-                    hour: "numeric",
-                    minute: "numeric",
-                  })
+                  hour: "numeric",
+                  minute: "numeric",
+                })
                 : "Never")
             ) : (
               <div className="flex w-48 flex-col gap-1 py-1">

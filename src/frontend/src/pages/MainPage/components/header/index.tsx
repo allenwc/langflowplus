@@ -3,7 +3,7 @@ import ShadTooltip from "@/components/shadTooltipComponent";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 import { debounce } from "lodash";
 import { useCallback, useEffect, useState } from "react";
 
@@ -28,6 +28,7 @@ const HeaderComponent = ({
   setSearch,
   isEmptyFolder,
 }: HeaderComponentProps) => {
+  const { t } = useTranslation();
   const [debouncedSearch, setDebouncedSearch] = useState("");
 
   // Debounce the setSearch function from the parent
@@ -80,11 +81,10 @@ const HeaderComponent = ({
                 id={`${type}-btn`}
                 data-testid={`${type}-btn`}
                 onClick={() => setFlowType(type as "flows" | "components")}
-                className={`border-b ${
-                  flowType === type
+                className={`border-b ${flowType === type
                     ? "border-b-2 border-foreground text-foreground"
                     : "border-border text-muted-foreground hover:text-foreground"
-                } px-3 pb-2 text-sm`}
+                  } px-3 pb-2 text-sm`}
               >
                 <div className={`${flowType === type ? "-mb-px" : ""} whitespace-nowrap`}>
                   {type === "flows" ? t('pages.main.header.flows') : t('pages.main.header.components')}
@@ -107,11 +107,10 @@ const HeaderComponent = ({
               <div className="relative mr-2 flex rounded-lg border border-muted bg-muted">
                 {/* Sliding Indicator */}
                 <div
-                  className={`absolute top-[3px] h-[33px] w-8 transform rounded-lg bg-background shadow-md transition-transform duration-300 ${
-                    view === "list"
+                  className={`absolute top-[3px] h-[33px] w-8 transform rounded-lg bg-background shadow-md transition-transform duration-300 ${view === "list"
                       ? "left-[2px] translate-x-0"
                       : "left-[6px] translate-x-full"
-                  }`}
+                    }`}
                 ></div>
 
                 {/* Buttons */}
@@ -120,11 +119,10 @@ const HeaderComponent = ({
                     key={viewType}
                     unstyled
                     size="icon"
-                    className={`group relative z-10 mx-[2px] my-[2px] flex-1 rounded-lg p-2 ${
-                      view === viewType
+                    className={`group relative z-10 mx-[2px] my-[2px] flex-1 rounded-lg p-2 ${view === viewType
                         ? "text-foreground"
                         : "text-muted-foreground hover:bg-muted"
-                    }`}
+                      }`}
                     onClick={() => setView(viewType as "list" | "grid")}
                   >
                     <ForwardedIconComponent

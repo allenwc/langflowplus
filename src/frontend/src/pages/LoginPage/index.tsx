@@ -16,9 +16,10 @@ import {
   inputHandlerEventType,
   loginInputStateType,
 } from "../../types/components";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 export default function LoginPage(): JSX.Element {
+  const { t } = useTranslation();
   const [inputState, setInputState] =
     useState<loginInputStateType>(CONTROL_LOGIN_STATE);
 
